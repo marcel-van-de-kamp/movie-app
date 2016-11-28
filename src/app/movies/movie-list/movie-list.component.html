@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let movie of movies">
+    <div>{{movie.name}} - {{movie.genre}}</div>
+    <div>Rating: {{movie.rating}}</div>
+    <button (click)="onMovieClicked(movie)">View movie</button>
+  </li>
+</ul>

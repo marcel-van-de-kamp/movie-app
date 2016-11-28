@@ -1,0 +1,9 @@
+<p>
+  movies works!
+</p>
+
+<app-movie-list [movies]="movies" (movieClicked)="onMovieClicked($event)"></app-movie-list>
+
+<div *ngIf="selectedMovie">
+  <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
+</div>

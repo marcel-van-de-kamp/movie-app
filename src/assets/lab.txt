@@ -1,0 +1,103 @@
+Stappen plan angular2 training:
+	- Zoals tour of hero's alles beginnen in 1 app.component
+	- maak een simpele list met de bestaande angular directives
+	- maak een simpele detail van een selected uit de list
+	- verplaats de detail naar een aparte component
+	- verplaats de list naar een aparte component
+	- maak een service die statische data retourneert
+	- maak een eigen feature component/module
+	- verplaats de shit naar die feature component module
+	- maak een derde 'dashboard' component en module
+	- gebruik de service ook in het dashboard gedeelte
+	- rout vanaf het dashboard naar de movies toe
+	- maak een echte http call vanuit de service met promises en observables.
+
+
+oefeningen opzet:
+- npm install -g angular-cli --sass
+- npm install -g typescript
+
+
+oefening 1:
+- ng new angular2-cursus
+- npm start
+
+oefeningen 2:
+- in app-component:
+- return een array met movieobjecten
+- in de view (html) ng-for loop om de movies te tonen
+
+oefening 2.1
+- maak een folder movies en zet daarin een movie model class, waarin je typed movie properties definieerd
+- maak de movies item in de app-component typed mbv van deze model class (new movie.ts, import movies/movie.ts)
+
+oefening 3:
+- zet een click event property op een movie item die een functie in de component aanroept
+- in de html toon de geselecteerde movie (selectedMovie), gebruik ng-if
+
+oefening 4:
+- maak een nieuwe stateless component in movies folder: movie-detail.component
+- maak een input property movie van type movie
+
+
+oefening 5:
+- in app module registreer new component bij declarations
+- vervang de selectedmovie html door de nieuwe selector <movie-detail> en geef de selectedMovie als input mee aan deze movie-detail component
+///- zet een functie op de output propery van movie-detail
+
+oefening 6:
+- verplaats movie-list functionaliteit van app-component naar nieuw movies-list component in de map movies
+- maak een input property movies, die wordt gevuld door de movies array in app-component
+- maak een output propery movieClicked van type eventEmitter(); (belangrijk moet geinstatieerd worden met new)
+- in movie-list.html plaats een event propery die de click afvangt met movie als event object. 
+- In de movie-list.component emit de clicked movie event in de onMovieClicked functie die zelf gemaakt moet worden
+
+oefening 6.1:
+- in app.module kijk of de movie-list component bij de declarations staat
+- vervang de huidige statische list in de app.component.html door de <movies-list> selector en geef als input de movies array
+
+oefening 7:
+- in app component maak een functie die het event object van movie list afvangt (emitted movie) en de selectedMovie set.
+- en zet de movieClicked event binding op <movies-list> in app.component.html die deze functie met als parameter de geselecteerde movie zal gaan uitvoeren.
+- zorg dat de selected movie weer getoond wordt.
+
+oefening 7.1
+het ophalen van data doe je normaliter niet een component, maar in een service. Een service wordt binnen Angular maar 1x geinstatieerd waardoor het een singleton is en je eventueel nog data kan cachen.
+Een service is dan ook ideaal om data op te halen en te bewerken.
+- verplaats de movielijst naar een nieuwe movie service. maak deze service in de root van de map movies.
+- zorg ervoor de service module/app breed beschikbaar is via een import en een toevoeging aan de providers array
+- maak in app.component.ts gebruik van deze nieuwe service middels de constructor
+
+oefening 8:
+We hebben nu een movielist, detail en service die allemaal onder de 'feature' movies vallen. deze kunnen en moeten eigenlijk op zichzelf kunnen staan en werken zonder afhankelijk te zijn van de app die we nu aan het maken zijn.
+- Maak een movies.component aan in de movies folder. Deze neemt de functionaliteit over die nu in de app.component wordt gedaan.
+- Maak een movies.module aan en maak een nieuwe ngmodule. registreer de movies.component hier en verplaats de registraties van de list component, detail component en service die in app.module staan naar deze module.
+- import de nieuwe aangemaakte module in de app module.
+
+
+oefening 9:
+je zult nu een leeg scherm hebben (misschien een titel), aangezien de app component helemaal leeg is.
+om de movies weer terug op het scherm te krijgen moeten we een link/route/url naar de movies.component maken.
+We zorgen er eerst voor dat movies standaard getoond wordt door een redirect te registreren om de 'base' url '/'.
+- importeer de routermodule en routes uit angular/router in de app.module.
+- Voeg een route toe aan de app module imports door gebruik te maken van de RouterModule.forRoot functie met de config: path '', redirectTo: 'movies'.
+- importeer de routermodule en routes uit angular/router ook in de movies.module.
+- Voeg een route toe aan de movies module imports door gebruik te maken van de RouterModule.forChild functie met de config: path 'movies' en component: MoviesComponent.
+
+
+oefening 9.1:
+Beter om in eigen file maken/separation of concerns
+- maak een nieuw bestand op hetzelfde niveau als de app.component en noem het app-routing.module.ts
+- maak een nieuwe constante en typeer deze als 'Routes'. stop daar de route configuratie in.
+- maak een ngModule in het bestand die de forRoot angular import doet van de routes en geef de routermodule ook op in de exports array. (Wat je hier eigenlijk doet is routermodule importeren, er wat aan toe voegen (config) via de forroot functie en weer exporteren.)
+- importeer de nieuwe module in de app.module en voeg hem toe aan de module imports array (als laatste!)
+- doe hetzelfde voor de movies module.
+
+oefening 10:
+- Doe een echte call naar een backend via de http service :)
+
+
+
+
+
+
