@@ -93,8 +93,48 @@ Beter om in eigen file maken/separation of concerns
 - importeer de nieuwe module in de app.module en voeg hem toe aan de module imports array (als laatste!)
 - doe hetzelfde voor de movies module.
 
-oefening 10:
-- Doe een echte call naar een backend via de http service :)
+
+
+oefening ..:
+- maak een derde module 'dashboard' aan met angular cli : ng g module --routing
+- geef de dashbaord.component de route path 'dashboard'
+- Haal in de dashboard component een lijst op van alleen je favoriete movies, gebruik hiervoor de movie service, en toon de lijst.
+
+
+oefening ...:
+- Voeg bovenin een button toe in de template van de dashboard component. Voeg op de button een link toe naar de movies component door de angular routerLink directive te gebruiken.
+
+oefening ...:
+- Voeg bovenin een button toe in de template van de movies component. Voeg op de button een link toe naar de dashboard component door de angular routerLink directive te gebruiken.
+
+oefening ...:
+De vorige twee oefeningen zijn een beetje dubbelop. We willen kunnen navigeren zonder iedere keer de knoppen naar andere pagina's te moeten toevoegen op iedere pagina.
+- Voeg  
+
+
+oefening ...:
+Doe een echte call naar een back-end via de http service
+- verander de returntype van de functie 'getMovies' die nu de statische movies retourneerd in de service naar Promise<Movies[]>
+- gebruik de url .... om een api call te doen naar een bestaande backend. deze backend zal movies teruggeven in het volgende formaat : {...}
+	- import de http service van angular/http.
+	- injecteer deze in de constructor.
+	- roep in de service functie de get functie van de http service aan met de url. // We doen een asynchrone call naar de backend
+	- roep direct de 'toPromise' functie aan op het resultaat van de get functie.   // Converteer het synchrone resultaat (observable) van de get functie naar een promise.
+	- Roep de then functie aan op het resultaat van de 'toPromise' en geef een arrow functie als als asynchrone callback mee.
+	- De arrow functie krijgt 1 parameter van het type Response. roep de functie json() aan op deze parameter en laat de error functie dit als resultaat retourneren.
+	- geef uiteindelijk het synchrone resultaat van de then functie terug als resultaat van de getMovies.
+
+
+
+
+oefening ...:
+- forms
+
+oefening ...:
+- dynamic forms
+
+oefening ...:
+- testing
 
 
 
