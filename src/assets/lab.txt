@@ -17,7 +17,7 @@ oefeningen opzet:
 - npm install -g typescript
 
 oefening 1:
-- ng new angular2-cursus
+- ng new movie-assigments --style=scss
 - npm start
 
 oefeningen 2:
