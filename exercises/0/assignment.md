@@ -2,6 +2,7 @@ Assignment 0: setting up an angular application with angular-cli
 ================================================================
 
 ## To quickly setup a ready to go angular application, we need to install some tooling.
+ 
  **Mac/Linux users should prefix the commands with `sudo`.**
 
 - Install visual studio code
@@ -14,15 +15,15 @@ Assignment 0: setting up an angular application with angular-cli
 - After the project is setup, execute the command `npm install` from the internal terminal
 - To run the application, execute the command `npm start` from the internal terminal and open the url http://localhost:4200 in a browser.
 
-**See the tables below for resource url's.**
  
-| links         |           |
-|:--------------|:----------|
-| vs code       | https://code.visualstudio.com |
-| nodejs        | https://nodejs.org/en/ |
-| npm           | https://www.npmjs.com/ |
-| typescript    | https://www.typescriptlang.org/docs/tutorial.html |
-| angular-cli   | https://cli.angular.io/ |
+| links             |           |
+|:----------------- |:----------|
+| vs code           | https://code.visualstudio.com |
+| nodejs            | https://nodejs.org/en/ |
+| npm               | https://www.npmjs.com/ |
+| typescript        | https://www.typescriptlang.org/docs/tutorial.html |
+| angular-cli       | https://cli.angular.io/ |
+| angular-cli ref   | https://cli.angular.io/reference.pdf |
 | angular       | https://angular.io/docs/ts/latest/ |
 
 
