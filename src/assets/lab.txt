@@ -67,20 +67,27 @@ Een service is dan ook ideaal om data op te halen en te bewerken.
 
 oefening 8:
 We hebben nu een movielist, detail en service die allemaal onder de 'feature' movies vallen. deze kunnen en moeten eigenlijk op zichzelf kunnen staan en werken zonder afhankelijk te zijn van de app die we nu aan het maken zijn.
-- Maak een movies.component aan in de movies folder. Deze neemt de functionaliteit over die nu in de app.component wordt gedaan.
-- Maak een movies.module aan en maak een nieuwe ngmodule. registreer de movies.component hier en verplaats de registraties van de list component, detail component en service die in app.module staan naar deze module.
-- import de nieuwe aangemaakte module in de app module.
-
+- Maak een movies.module aan en maak een nieuwe ngmodule. via ng g module movies
+- na het uitvoeren van dit commando heb je een movies.module en een movies.component. Dit component wordt de root-component van deze nieuwe module.
+- De movies.component gaat de functionaliteit overnemen die nu in de app.component wordt gedaan.
+- import & declareer de movies.component in de nieuwe movies.module en verplaats de imports en declarations van de movie-list component, movie-detail component en movie.service die in app.module staan naar deze module.
+- deze module willen we gebruiken in onze app.component, daarvoor moeten we de root-component (movies.component) exporteren in movies.module.
+- exporteer de root-component in de movies.module en importeer deze nieuwe module in de app module en voeg hem toe aan de angular imports array
+- zorg ervoor de app weer werkt door de movies.component te gebruiken in de app.component.html
+- tip: krijg je een error dat ngIf en ngFor niet herkent wordt? Zorg ervoor dat in movies.module wel de @angular/common module wordt geimporteerd en in de angular imports array staat.
 
 oefening 9:
-je zult nu een leeg scherm hebben (misschien een titel), aangezien de app component helemaal leeg is.
-om de movies weer terug op het scherm te krijgen moeten we een link/route/url naar de movies.component maken.
+De app werkt weer, maar zou het niet mooi zijn als we de movies module konden bereiken via een eigen unieke url?
+Hiervoor moeten we een link/route/url naar de movies.component maken.
 We zorgen er eerst voor dat movies standaard getoond wordt door een redirect te registreren om de 'base' url '/'.
+- om de angular router te vertellen hoe url's opgebouwd moeten worden is het nodig om ee base href in de index.html te plaatsen : <base href="/">
 - importeer de routermodule en routes uit angular/router in de app.module.
-- Voeg een route toe aan de app module imports door gebruik te maken van de RouterModule.forRoot functie met de config: path '', redirectTo: 'movies'.
+- Voeg een route toe aan de app module imports door gebruik te maken van de RouterModule.forRoot functie met de config: path '', redirectTo: 'movies', pathMatch: 'full'.
 - importeer de routermodule en routes uit angular/router ook in de movies.module.
 - Voeg een route toe aan de movies module imports door gebruik te maken van de RouterModule.forChild functie met de config: path 'movies' en component: MoviesComponent.
-
+- omdat de movies.component nu benaderd gaat worden via een url, haal de selector property van dit component weg
+- nu moeten we angular nog vertellen waar hij components op basis van een url moet neerzetten. Dit doen we door in app.component.ts de selector <router-outlet> te plaatsen. NB: de oude selector van movies.component hier ook weghalen
+- nu de we movies module benaderen via een url hoeft de movies.component ook niet meer geexporteerd te worden in de movies.module. Hij heeft immers geen selector meer.
 
 oefening 9.1:
 Beter om in eigen file maken/separation of concerns
@@ -88,9 +95,7 @@ Beter om in eigen file maken/separation of concerns
 - maak een nieuwe constante en typeer deze als 'Routes'. stop daar de route configuratie in.
 - maak een ngModule in het bestand die de forRoot angular import doet van de routes en geef de routermodule ook op in de exports array. (Wat je hier eigenlijk doet is routermodule importeren, er wat aan toe voegen (config) via de forroot functie en weer exporteren.)
 - importeer de nieuwe module in de app.module en voeg hem toe aan de module imports array (als laatste!)
-- doe hetzelfde voor de movies module.
-
-
+- doe hetzelfde voor de movies module. Maar hier een movies.routing.modules.ts bestand.
 
 oefening ..:
 - maak een derde module 'dashboard' aan met angular cli : ng g module --routing
