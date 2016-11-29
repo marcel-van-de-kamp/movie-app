@@ -1,22 +1,20 @@
 Stappen plan angular2 training:
-	- Zoals tour of hero's alles beginnen in 1 app.component
-	- maak een simpele list met de bestaande angular directives
-	- maak een simpele detail van een selected uit de list
-	- verplaats de detail naar een aparte component
-	- verplaats de list naar een aparte component
-	- maak een service die statische data retourneert
-	- maak een eigen feature component/module
-	- verplaats de shit naar die feature component module
-	- maak een derde 'dashboard' component en module
-	- gebruik de service ook in het dashboard gedeelte
-	- rout vanaf het dashboard naar de movies toe
-	- maak een echte http call vanuit de service met promises en observables.
-
+    - Zoals tour of hero's alles beginnen in 1 app.component
+    - maak een simpele list met de bestaande angular directives
+    - maak een simpele detail van een selected uit de list
+    - verplaats de detail naar een aparte component
+    - verplaats de list naar een aparte component
+    - maak een service die statische data retourneert
+    - maak een eigen feature component/module
+    - verplaats de shit naar die feature component module
+    - maak een derde 'dashboard' component en module
+    - gebruik de service ook in het dashboard gedeelte
+    - rout vanaf het dashboard naar de movies toe
+    - maak een echte http call vanuit de service met promises en observables.
 
 oefeningen opzet:
-- npm install -g angular-cli --sass
+- npm install -g angular-cli
 - npm install -g typescript
-
 
 oefening 1:
 - ng new angular2-cursus
@@ -38,7 +36,6 @@ oefening 3:
 oefening 4:
 - maak een nieuwe stateless component in movies folder: movie-detail.component
 - maak een input property movie van type movie
-
 
 oefening 5:
 - in app module registreer new component bij declarations
