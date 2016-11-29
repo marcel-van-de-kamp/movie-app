@@ -14,7 +14,7 @@ Stappen plan angular2 training:
 
 
 oefeningen opzet:
-- npm install -g angular-cli --sass
+- npm install -g angular-cli --style=scss
 - npm install -g typescript
 
 
