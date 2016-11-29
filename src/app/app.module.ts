@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MoviesModule } from './movies/movies.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app.routing.module';
     FormsModule,
     HttpModule,
     MoviesModule,
+    DashboardModule,
     AppRoutingModule
   ],
   providers: [],

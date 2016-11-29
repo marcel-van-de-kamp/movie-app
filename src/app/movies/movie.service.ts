@@ -33,4 +33,31 @@ export class MovieService {
       return MOVIES;
   }
 
+  getFavMovies():Movie[] {
+
+    const MOVIES:Movie[] = [
+        {
+          id: 1,
+          name: 'Star Wars',
+          genre: 'SciFi',
+          rating: 9
+        },
+        {
+          id: 2,
+          name: 'Armageddon',
+          genre: 'Scifi',
+          rating: 8
+        },
+        { 
+          id: 3,
+          name: 'Twister',
+          genre: 'SciFi',
+          rating: 7
+        }
+      ]
+
+      return MOVIES;
+    
+  }
+
 }

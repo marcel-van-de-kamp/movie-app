@@ -1,0 +1,8 @@
+<h2>Favorite movies</h2>
+
+<ul>
+  <li *ngFor="let movie of favMovies">
+    <div>{{movie.name}} - {{movie.genre}}</div>
+    <div>Rating: {{movie.rating}}</div>
+  </li>
+</ul>
