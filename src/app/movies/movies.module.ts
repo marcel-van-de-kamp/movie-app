@@ -1,12 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser'; //voegt ng g module niet toe, nodig voor ng-if, ng-for, etc..
 import { NgModule } from '@angular/core';
-//import { CommonModule } from '@angular/common'; //voegt ng g module wel toe, maar ljkt niet nodig
+import { CommonModule } from '@angular/common'; //needs to be imported by ngModule
+import { RouterModule, Routes } from '@angular/router';
+
 import { MoviesComponent } from './movies.component';
 
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 
 import { MovieService } from './movie.service';
+
+import { MoviesRoutingModule } from './movies.routes.module';
 
 @NgModule({
   declarations: [
@@ -15,15 +18,15 @@ import { MovieService } from './movie.service';
     MovieListComponent
   ],
   imports: [
-    BrowserModule
+    CommonModule,
+    MoviesRoutingModule
   ],
   exports: [
-    MoviesComponent //don't export detail & list component, because they're private components within the movies component
   ],
   providers: [
     MovieService
   ],
-  bootstrap: [MoviesComponent]
+  bootstrap: []
 })
 
 export class MoviesModule { }
