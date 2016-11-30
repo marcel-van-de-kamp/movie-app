@@ -15,7 +15,7 @@ Assignment 0: setting up an angular application with angular-cli
 - After the project is setup, execute the command `npm install` from the internal terminal
 - To run the application, execute the command `npm start` from the internal terminal and open the url http://localhost:4200 in a browser.
 
- links:
+ **Links**:
 - [vs code](https://code.visualstudio.com)
 - [nodejs](https://nodejs.org/en/)
 - [npm](https://www.npmjs.com/)
