@@ -3,7 +3,7 @@ Assignment 1: Displaying a list of movies
 
 ## Use the app component to define an array of movie objects and display it as a list in the browser.
 
-- Declare a private variable in the app component `'movies'` with a type array of any `'any[]'`;
+- Declare a public variable in the app component `'movies'` with a type array of any `'any[]'`;
 - Initialize the movies array in the constructor as an array of movie objects;
   - Fill the array with a couple of good movies;
   - A movie object has the following properties: id, name, genre, rating;
