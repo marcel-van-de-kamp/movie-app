@@ -127,6 +127,8 @@ Doe een echte call naar een back-end via de http service
 	- geef uiteindelijk het synchrone resultaat van de then functie terug als resultaat van de getMovies.
 
 
+oefening...:
+- iets met input in detail die naam veranderd
 
 
 oefening ...:
