@@ -1,4 +1,4 @@
-Assignment 4: Creating a details component 
+Assignment 4: Creating a movie detail component 
 ==============================================
 
 ## Create a new reusable component that shows the details of a movie and use it in the app component

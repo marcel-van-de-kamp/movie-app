@@ -37,7 +37,7 @@ oefening 4:
 - maak een nieuwe stateless component in movies folder: movie-detail.component
 - maak een input property movie van type movie
 
-oefening 5:
+oefening 4.1:
 - in app module registreer new component bij declarations
 - vervang de selectedmovie html door de nieuwe selector <movie-detail> en geef de selectedMovie als input mee aan deze movie-detail component
 ///- zet een functie op de output propery van movie-detail
@@ -128,7 +128,8 @@ Doe een echte call naar een back-end via de http service
 
 
 oefening...:
-- iets met input in detail die naam veranderd
+- iets met input in detail die naam veranderd en doorloopt naar de list
+https://angular.io/docs/ts/latest/guide/user-input.html
 
 
 oefening ...:
