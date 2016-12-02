@@ -16,56 +16,56 @@ oefeningen opzet:
 - npm install -g angular-cli
 - npm install -g typescript
 
-oefening 1:
+oefening
 - ng new movie-assigments --style=scss
 - npm start
 
-oefeningen 2:
+oefeningen
 - in app-component:
 - return een array met movieobjecten
 - in de view (html) ng-for loop om de movies te tonen
 
-oefening 2.1
+oefening 
 - maak een folder movies en zet daarin een movie model class, waarin je typed movie properties definieerd
 - maak de movies item in de app-component typed mbv van deze model class (new movie.ts, import movies/movie.ts)
 
-oefening 3:
+oefening
 - zet een click event property op een movie item die een functie in de component aanroept
 - in de html toon de geselecteerde movie (selectedMovie), gebruik ng-if
 
-oefening 4:
+oefening
 - maak een nieuwe stateless component in movies folder: movie-detail.component
 - maak een input property movie van type movie
 
-oefening 4.1:
+oefening 
 - in app module registreer new component bij declarations
 - vervang de selectedmovie html door de nieuwe selector <movie-detail> en geef de selectedMovie als input mee aan deze movie-detail component
 ///- zet een functie op de output propery van movie-detail
 
-oefening 6:
+oefening
 - verplaats movie-list functionaliteit van app-component naar nieuw movies-list component in de map movies
 - maak een input property movies, die wordt gevuld door de movies array in app-component
 - maak een output propery movieClicked van type eventEmitter(); (belangrijk moet geinstatieerd worden met new)
 - in movie-list.html plaats een event propery die de click afvangt met movie als event object. 
 - In de movie-list.component emit de clicked movie event in de onMovieClicked functie die zelf gemaakt moet worden
 
-oefening 6.1:
+oefening 
 - in app.module kijk of de movie-list component bij de declarations staat
 - vervang de huidige statische list in de app.component.html door de <movies-list> selector en geef als input de movies array
 
-oefening 7:
+oefening 
 - in app component maak een functie die het event object van movie list afvangt (emitted movie) en de selectedMovie set.
 - en zet de movieClicked event binding op <movies-list> in app.component.html die deze functie met als parameter de geselecteerde movie zal gaan uitvoeren.
 - zorg dat de selected movie weer getoond wordt.
 
-oefening 7.1
+oefening 
 het ophalen van data doe je normaliter niet een component, maar in een service. Een service wordt binnen Angular maar 1x geinstatieerd waardoor het een singleton is en je eventueel nog data kan cachen.
 Een service is dan ook ideaal om data op te halen en te bewerken.
 - verplaats de movielijst naar een nieuwe movie service. maak deze service in de root van de map movies.
 - zorg ervoor de service module/app breed beschikbaar is via een import en een toevoeging aan de providers array
 - maak in app.component.ts gebruik van deze nieuwe service middels de constructor
 
-oefening 8:
+oefening 
 We hebben nu een movielist, detail en service die allemaal onder de 'feature' movies vallen. deze kunnen en moeten eigenlijk op zichzelf kunnen staan en werken zonder afhankelijk te zijn van de app die we nu aan het maken zijn.
 - Maak een movies.module aan en maak een nieuwe ngmodule. via ng g module movies
 - na het uitvoeren van dit commando heb je een movies.module en een movies.component. Dit component wordt de root-component van deze nieuwe module.
@@ -79,8 +79,8 @@ We hebben nu een movielist, detail en service die allemaal onder de 'feature' mo
 oefening 9:
 De app werkt weer, maar zou het niet mooi zijn als we de movies module konden bereiken via een eigen unieke url?
 Hiervoor moeten we een link/route/url naar de movies.component maken.
-We zorgen er eerst voor dat movies standaard getoond wordt door een redirect te registreren om de 'base' url '/'.
-- om de angular router te vertellen hoe url's opgebouwd moeten worden is het nodig om ee base href in de index.html te plaatsen : <base href="/">
+We zorgen er eerst voor dat movies standaard getoond wordt door een redirect te registreren als er naar de root url wordt genavigeerd.
+- om de angular router te vertellen hoe url's opgebouwd moeten worden is het nodig om een base href in de index.html te plaatsen : <base href="/">
 - importeer de routermodule en routes uit angular/router in de app.module.
 - Voeg een route toe aan de app module imports door gebruik te maken van de RouterModule.forRoot functie met de config: path '', redirectTo: 'movies', pathMatch: 'full'.
 - importeer de routermodule en routes uit angular/router ook in de movies.module.
