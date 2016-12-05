@@ -18,8 +18,8 @@ Assignment 7: Creating a feature module
 - Change the selector of the movies component to `movies`;
 - Add the movies component in the template of the app component, to get the application working again;
 
-> We now have a movies feature module that encapsulates all movie specific material.  
-> Our app (module/component) imports and uses the functionalities provided by the movies module.  
+> We now have a movies feature module that encapsulates all movie specific material.
+> Our app (module/component) imports and uses the functionalities provided by the movies module.
 
 **Links**:
 - [Angular Modules](https://angular.io/docs/ts/latest/guide/ngmodule.html)

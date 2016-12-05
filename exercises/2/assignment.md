@@ -1,7 +1,7 @@
 Assignment 2: Creating a movie object
 ==============================================
 
-## Create a typed model definition for a movie and use it in the app component
+> ## Create a typed model definition for a movie and use it in the app component
 
 - Create a new folder in the app folder `movies`;
 - Create a new file in the folder `movie.ts`;
@@ -12,7 +12,7 @@ Assignment 2: Creating a movie object
 - Change the typing of the movie array to an array of `Movie` instead of `any`
 - Fix any errors that might occur in the app component
 
-We now have a reusable class that functions as a 'model' for a new or existing Movie, a Movie model object.
+> We now have a reusable class that functions as a 'model' for a new or existing Movie, a Movie model object.
 
 **Links**:
 - [typescript classes](http://www.typescriptlang.org/docs/handbook/classes.html)

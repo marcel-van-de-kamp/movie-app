@@ -1,7 +1,7 @@
 Assignment 5: Creating a movie list component 
 ==============================================
 
-## Create a new reusable component that shows the list of a movies and use it in the app component
+> ## Create a new reusable component that shows the list of a movies and use it in the app component
 
 - Create a new component in the `movies` folder using the angular-cli generator command `ng g component movies/movie-list` in the integrated terminal;
   - Double check if the component is imported in the app module and added to the ngModule `declarations` array;
@@ -18,8 +18,8 @@ Assignment 5: Creating a movie list component
     - Add an event binding to the `movieClicked` event and bind it to the function `onMovieSelected` in the app component;
         - Rename the function `onMovieClicked` in the app component to `onMovieSelected` and use the event value to set the `selectedMovie`;
 
-The view will still show the list of movies will show the details of a clicked movie, but now via a reusable stateless list and detail component.  
-The parent component (app component) regulates the communication between the two stateless components.
+> The view will still show the list of movies will show the details of a clicked movie, but now via a reusable stateless list and detail component.
+> The parent component (app component) regulates the communication between the two stateless components.
 
 **Links**:
 - [creating a component](https://angular-2-training-book.rangle.io/handout/components/creating_components.html)

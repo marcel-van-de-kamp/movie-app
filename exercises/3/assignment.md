@@ -1,7 +1,7 @@
 Assignment 3: showing movie details 
 ==============================================
 
-## Add a detail view to the app component that shows the details of the movie selected in the list 
+> ## Add a detail view to the app component that shows the details of the movie selected in the list 
 
 - Add a property to the app component class `selectedMovie` of the type `Movie`;
 - Add a function to the app component class `onMovieClicked` 
@@ -15,7 +15,7 @@ Assignment 3: showing movie details
 - Add an event binding to the the buttons `click` event, bind it to the `onMovieClicked` function and supply the clicked movie object as parameter.
 - Add an `ngIf` directive to the details `div` to conditionally hide the details when no movie has been selected yet (`!selectedMovie`).
 
-The view will now show the details of the movie that has been 'clicked'.
+> The view will now show the details of the movie that has been 'clicked'.
 
 **Links**:
 - [angular displaying data](https://angular.io/docs/ts/latest/guide/displaying-data.html)
