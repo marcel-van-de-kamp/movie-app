@@ -1,63 +1,34 @@
 import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
 
 import { Movie } from './movie';
 
 @Injectable()
 export class MovieService {
+  private moviesUrl = 'api/movies';  // URL to web api
+  private moviesFavUrl = 'api/moviesFav';
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  getMovies():Movie[] {
-
-    const MOVIES:Movie[] = [
-        {
-          id: 1,
-          name: 'Terminator 2',
-          genre: 'SciFi',
-          rating: 9
-        },
-        {
-          id: 2,
-          name: 'Pulp Fiction',
-          genre: 'Arthouse',
-          rating: 8
-        },
-        { 
-          id: 3,
-          name: 'The Matrix',
-          genre: 'SciFi',
-          rating: 7
-        }
-      ]
-
-      return MOVIES;
+  getMovies(): Promise<Movie[]> {
+    return this.http.get(this.moviesUrl)
+               .toPromise()
+               .then(response => response.json().data as Movie[])
+               .catch(this.handleError);
   }
 
-  getFavMovies():Movie[] {
+  getFavMovies(): Promise<Movie[]> {
+    return this.http.get(this.moviesFavUrl)
+               .toPromise()
+               .then(response => response.json().data as Movie[])
+               .catch(this.handleError);
+  }
 
-    const MOVIES:Movie[] = [
-        {
-          id: 1,
-          name: 'Star Wars',
-          genre: 'SciFi',
-          rating: 9
-        },
-        {
-          id: 2,
-          name: 'Armageddon',
-          genre: 'Scifi',
-          rating: 8
-        },
-        { 
-          id: 3,
-          name: 'Twister',
-          genre: 'SciFi',
-          rating: 7
-        }
-      ]
-
-      return MOVIES;
-    
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
   }
 
 }

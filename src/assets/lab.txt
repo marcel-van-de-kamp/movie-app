@@ -114,17 +114,35 @@ De vorige twee oefeningen zijn een beetje dubbelop. We willen kunnen navigeren z
 - Voeg  
 
 
-oefening ...:
-Doe een echte call naar een back-end via de http service
-- verander de returntype van de functie 'getMovies' die nu de statische movies retourneerd in de service naar Promise<Movies[]>
-- gebruik de url .... om een api call te doen naar een bestaande backend. deze backend zal movies teruggeven in het volgende formaat : {...}
-	- import de http service van angular/http.
-	- injecteer deze in de constructor.
-	- roep in de service functie de get functie van de http service aan met de url. // We doen een asynchrone call naar de backend
-	- roep direct de 'toPromise' functie aan op het resultaat van de get functie.   // Converteer het synchrone resultaat (observable) van de get functie naar een promise.
+oefening 10.0 http - configuratie
+- NB: onderstaand stappenplan gebaseerd op: https://angular.io/docs/ts/latest/tutorial/toh-pt6.html
+- HTTP services registereren. Om een http backend call te doen moeten @angular/htpp importeren. Deze services willen we overal kunnen gebruiken, dus is het raadzaam om dit in de AppModule te doen.
+- in app.module.ts import HttpModule from @angular/http
+- we hebben nog geen echte backend api waar we met een http call tegen aan kunnen praten. Tot die tijd gaan we de backend mocken waarvoor Angular 2 een toolset voor heeft, nl de in-memory web api
+- deze moeten we nog installeren, dus voer uit: npm install angular-in-memory-web-api --save-dev
+- in app.module.ts voeg de volgende imports toe:
+    // Imports for loading & configuring the in-memory web api
+    import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+    import { InMemoryDataService }  from './in-memory-data.service';
+- in app.module.ts voeg het volgende toe aan de @NgModule imports array:
+    - InMemoryWebApiModule.forRoot(InMemoryDataService)
+- Deze InMemoryWebApiModule vervangt de default Http client
+- maak een in-memory-data.service.ts file aan en plaats hier een InMemoryDataService class welke de interface InMemoryDBService implementeert
+- maak in deze class gebruik van de createDb functie die de lijst van films gaat retourneren
+
+Oefening 10.1 http - de async backend call!
+- in de movie.service gaan we nu een echte backend call implementeren
+- import de Http module
+- injecteer de Http service in de movieService contructor
+- maak een private property moviesUrl met als value 'api/movies' en een private propery moviesFavUrl met als value 'api/moviesFav
+- verander de getMovies en getFavMovies functies zodanig dat deze een http call doet naar de juiste url en een promise retourneert met als payload een array van het type Movie
+    - roep direct de 'toPromise' functie aan op het resultaat van de get functie.   // Converteer het synchrone resultaat (observable) van de get functie naar een promise.
+    - om de toPromise functie te kunnen gebruiken importeer de rxjs operator toPromise: import 'rxjs/add/operator/toPromise';
 	- Roep de then functie aan op het resultaat van de 'toPromise' en geef een arrow functie als als asynchrone callback mee.
 	- De arrow functie krijgt 1 parameter van het type Response. roep de functie json() aan op deze parameter en laat de error functie dit als resultaat retourneren.
 	- geef uiteindelijk het synchrone resultaat van de then functie terug als resultaat van de getMovies.
+- verander in movies.component.ts en in dashboard.component.ts de ngOnInit functies zodanig dat deze gebruik gaan maken van de promises die de movieservice nu zal retourneren.
+
 
 
 oefening:
