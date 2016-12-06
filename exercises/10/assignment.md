@@ -9,7 +9,7 @@ Assignment 10: Redirecting to another route
 
 **Steps**:
 - Import the `RouterModule` and `Routes` in the app module;
-- Declare a constant `routes` with the type `Routes` in the movies module;
+- Declare a constant `routes` with the type `Routes` in the app module;
 - Define the `routes` constant as an array with one object literal in it (a Route config object);
   - Set the `path` property of the Route config object to an empty string `''`;
   - Set the `redirectTo` property of the Route config object to the route `'dashboard'`;

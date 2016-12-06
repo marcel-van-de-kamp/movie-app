@@ -25,25 +25,25 @@ export class InMemoryDataService implements InMemoryDbService {
       let moviesFav = [
         {
             id: 1,
-            title: 'terminator',
+            name: 'terminator',
             genre: 'scifi',
             rating: 9
         },
         {
             id: 2,
-            title: 'star wars',
+            name: 'star wars',
             genre: 'scifi',
             rating: 8
         },
         {
             id: 3,
-            title: 'pulp fiction',
+            name: 'pulp fiction',
             genre: 'drama',
             rating: 7
         },
         {
             id: 4,
-            title: 'shrek',
+            name: 'shrek',
             genre: 'animation',
             rating: 5
         }

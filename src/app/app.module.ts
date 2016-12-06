@@ -9,6 +9,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 import { MoviesModule } from './movies/movies.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AppRoutingModule } from './app.routing.module';
@@ -21,6 +22,7 @@ import { AppRoutingModule } from './app.routing.module';
     BrowserModule,
     FormsModule,
     HttpModule,
+    CoreModule,
     MoviesModule,
     DashboardModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1000 }),

@@ -143,7 +143,21 @@ Oefening 10.1 http - de async backend call!
 	- geef uiteindelijk het synchrone resultaat van de then functie terug als resultaat van de getMovies.
 - verander in movies.component.ts en in dashboard.component.ts de ngOnInit functies zodanig dat deze gebruik gaan maken van de promises die de movieservice nu zal retourneren.
 
+Oefening 11 - de core module
+links: https://angular.io/docs/ts/latest/guide/style-guide.html#!#04-11
+Uitleg: een core module is de plek om app brede services en single-use components in op te slaan. Hierin staat alleen componenten die op een vaste plek staan in app.component.nl. Denk bijv aan een navigatie component en in het geval van services aan een loggerService
+- maak een nieuwe core module via ng g module core
+- verwijder het aangemaakte core.component en verwijder hem ook uit de core.module
+- maak een nieuw navigatie component via ng g component core/navigatie
+- knip de html uit app.component.html betreffende de navigatie, de <nav> node en plak deze in de html template van de nieuwe core/nav component.
+- voeg het nieuwe nav component toe aan de declarations en exports array van de core module.
+- importeer de core module in de app module en pas het nieuwe nav component toe in app.component.html
+- je zult zien dat de routerlinks niet meer werken, dit komt omdat de routerModule nog niet door de core module wordt geimporteerd. Importeer daarom de routerModule en voeg deze toe aan de imports array van de core module.
 
+Oefening 12 - de routerLinkActive directive
+Uitleg: the routerLinkActive directive kun je gebruiken om een css class toe te voegen aan het element wanneer zijn route gelijk is aan de active route
+- in de core/nav component voeg de routerLinkActive directive toe op beide navigatie links, geef als css class 'active' mee. ie: routerLinkActive="active"
+- voeg de active class toe aan de stylesheet van de core/nav component en geef het active menu-item bijvoorbeeld een andere kleur of een underline 
 
 oefening:
 iets met movie service naar de shared folder
