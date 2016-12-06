@@ -26,7 +26,5 @@ Assignment 9: Routing between components
 - Remove the movies and dashboard components from the `exports` array in the movies and dashboard module;
 - Replace the `movies` and `dashboard` components from the app component template with a `<router-outlet>` component;
 
-
-
 **Result**:
 > You can now navigate to URL `localhost:4200/dashboard` and `localhost:4200/movies` to activate the routes you created.
