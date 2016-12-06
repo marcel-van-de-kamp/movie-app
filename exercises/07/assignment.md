@@ -3,6 +3,12 @@ Assignment 7: Creating a feature module
 
 > ## Create a movies feature module and move all movie material to it 
 
+**Links**:
+- [Angular Modules](https://angular.io/docs/ts/latest/guide/ngmodule.html)
+- [Feature Modules](https://angular-2-training-book.rangle.io/handout/modules/feature-modules.html)
+- [Modules Explained](http://blog.angular-university.io/angular2-ngmodule/)
+
+**Steps**:
 - Generate a new module in the movies folder with the angular-cli command `ng g module movies`;
   - > You will notice angular-cli has also generated a `movies.component`. This component will function as the 'root' for the movies feature;
 - Move all movie functionality to the movies module:
@@ -18,9 +24,6 @@ Assignment 7: Creating a feature module
 - Change the selector of the movies component to `movies`;
 - Add the movies component in the template of the app component, to get the application working again;
 
+**Result**:
 > We now have a movies feature module that encapsulates all movie specific material.
 > Our app (module/component) imports and uses the functionalities provided by the movies module.
-
-**Links**:
-- [Angular Modules](https://angular.io/docs/ts/latest/guide/ngmodule.html)
-- [Feature Modules](https://angular-2-training-book.rangle.io/handout/modules/feature-modules.html)
