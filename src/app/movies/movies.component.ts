@@ -15,7 +15,7 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.movies = this.movieService.getMovies();
+    this.movieService.getMovies().then(movies => this.movies = movies);
 
   }
 

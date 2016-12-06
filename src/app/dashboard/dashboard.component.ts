@@ -14,7 +14,9 @@ export class DashboardComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    this.favMovies = this.movieService.getFavMovies();
+
+    this.movieService.getFavMovies().then(movies => this.favMovies = movies);
+    
   }
 
 }
