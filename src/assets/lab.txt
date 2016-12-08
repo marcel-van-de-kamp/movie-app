@@ -160,7 +160,8 @@ Uitleg: the routerLinkActive directive kun je gebruiken om een css class toe te 
 - voeg de active class toe aan de stylesheet van de core/nav component en geef het active menu-item bijvoorbeeld een andere kleur of een underline 
 
 oefening ..: 
-- de shared module
+- de shared module met een spinner en een eigen spinner service
+- of een text filter o.i.d.
 
 oefening ..:
 - aparte oefening voor uitleg over observables ?
