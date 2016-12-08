@@ -1,4 +1,4 @@
-Assignment 11: Adding navigation
+Assignment 12: Adding navigation
 ==============================================
 
 > ## Add navigation links for the movies and dashboard routes in the app module template

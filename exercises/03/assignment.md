@@ -5,6 +5,7 @@ Assignment 3: showing movie details
 
 **Links**:
 - [angular displaying data](https://angular.io/docs/ts/latest/guide/displaying-data.html)
+- [angular directives](https://angular-2-training-book.rangle.io/handout/directives/)
 - [angular ngIf directive](https://angular-2-training-book.rangle.io/handout/directives/ng_if_directive.html)
 
 **Steps**:

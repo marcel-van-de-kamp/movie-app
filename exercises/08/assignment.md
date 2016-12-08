@@ -13,7 +13,7 @@ Assignment 8: Multiple feature modules
 - Import the dashboard component in the dashboard module and add it to the `declarations` array.
 - Remove the import of the dashboard component from the app module and import the dashboard module instead and add it to the `imports` array;
 - Change the selector of the dashboard component to `dashboard`;
-- Create a function in the movie service that only returns your favorite 3 movies;
+- Create a function `getFavMovies` in the movie service that only returns your favorite 3 movies;
 - Import the service into the dashboard component and retreive your favorite movies in the `ngOnInit` function;
 - Display your favorite movies as a list in the template of the dashboard component;
 - Add the dashboard component to the template of the app component;

@@ -8,3 +8,7 @@
 
 - uitleg:hoe en waarom in de explanation.md
 - context: verhaaltje/stories voor movie app eromheen verzinnen
+
+
+
+

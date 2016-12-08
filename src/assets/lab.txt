@@ -159,13 +159,19 @@ Uitleg: the routerLinkActive directive kun je gebruiken om een css class toe te 
 - in de core/nav component voeg de routerLinkActive directive toe op beide navigatie links, geef als css class 'active' mee. ie: routerLinkActive="active"
 - voeg de active class toe aan de stylesheet van de core/nav component en geef het active menu-item bijvoorbeeld een andere kleur of een underline 
 
-oefening:
-iets met movie service naar de shared folder
+oefening ..: 
+- de shared module
+
+oefening ..:
+- aparte oefening voor uitleg over observables ?
 
 oefeningen user input:
 oefening...:
 - iets met input in detail die naam veranderd en doorloopt naar de list
 https://angular.io/docs/ts/latest/guide/user-input.html
+
+oefening component lifecycle hooks:
+- ngoninit, ngchange (ook dynamic forms), ngondestroy, er zijn nog veel meer
 
 
 oefening ...:
@@ -178,6 +184,10 @@ oefening ...:
 
 oefening ...:
 - testing
+
+oefening :
+
+aot voor productie (extra?)
 
 
 
