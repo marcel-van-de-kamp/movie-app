@@ -2,10 +2,10 @@ a {
     color: blue;
     text-transform: uppercase;
     text-decoration: none;
-
-    &:hover,
-    &.active {
-        text-decoration: underline;
-        color: red;
-    }
 }
+
+a:hover,
+.active {
+    text-decoration: underline;
+    color: red;
+    }

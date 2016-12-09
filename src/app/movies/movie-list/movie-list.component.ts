@@ -11,6 +11,8 @@ export class MovieListComponent implements OnInit {
   @Input() movies:Movie[];
   @Output() movieClicked = new EventEmitter();
 
+  private clickedMovie: Movie;
+
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +20,7 @@ export class MovieListComponent implements OnInit {
 
   onMovieClicked(movie:Movie):void {
     this.movieClicked.emit(movie);
+    this.clickedMovie = movie;
   }
 
 }

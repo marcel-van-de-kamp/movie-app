@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let movie of movies">
+  <li *ngFor="let movie of movies" [ngClass]="{ 'active': clickedMovie === movie }">
     <div>{{movie.name}} - {{movie.genre}}</div>
     <div>Rating: {{movie.rating}}</div>
     <button (click)="onMovieClicked(movie)">View movie</button>
