@@ -173,7 +173,7 @@ https://angular.io/docs/ts/latest/guide/user-input.html
 
 oefening component lifecycle hooks:
 - ngoninit, ngchange (ook dynamic forms), ngondestroy, er zijn nog veel meer
-
+https://angular-2-training-book.rangle.io/handout/advanced-components/component_lifecycle.html
 
 oefening ...:
 - forms
