@@ -143,7 +143,7 @@ Oefening 10.1 http - de async backend call!
 	- geef uiteindelijk het synchrone resultaat van de then functie terug als resultaat van de getMovies.
 - verander in movies.component.ts en in dashboard.component.ts de ngOnInit functies zodanig dat deze gebruik gaan maken van de promises die de movieservice nu zal retourneren.
 
-Oefening 11 - de core module
+Oefening .. - de core module
 links: https://angular.io/docs/ts/latest/guide/style-guide.html#!#04-11
 Uitleg: een core module is de plek om app brede services en single-use components in op te slaan. Hierin staat alleen componenten die op een vaste plek staan in app.component.nl. Denk bijv aan een navigatie component en in het geval van services aan een loggerService
 - maak een nieuwe core module via ng g module core
@@ -154,14 +154,22 @@ Uitleg: een core module is de plek om app brede services en single-use component
 - importeer de core module in de app module en pas het nieuwe nav component toe in app.component.html
 - je zult zien dat de routerlinks niet meer werken, dit komt omdat de routerModule nog niet door de core module wordt geimporteerd. Importeer daarom de routerModule en voeg deze toe aan de imports array van de core module.
 
-Oefening 12 - de routerLinkActive directive
+Oefening .. - de routerLinkActive directive
 Uitleg: the routerLinkActive directive kun je gebruiken om een css class toe te voegen aan het element wanneer zijn route gelijk is aan de active route
 - in de core/nav component voeg de routerLinkActive directive toe op beide navigatie links, geef als css class 'active' mee. ie: routerLinkActive="active"
 - voeg de active class toe aan de stylesheet van de core/nav component en geef het active menu-item bijvoorbeeld een andere kleur of een underline 
 
 oefening ..: 
-- de shared module met een spinner en een eigen spinner service
-- of een text filter o.i.d.
+uitleg:een shared module bevat components die overal in de applicatie hergebruikt worden. De shared module zal over het algemeen geen services providen, omdat deze niet singleton zullen zijn.
+- genereer een shared module met het commando 'ng g module shared'
+- verwijder de shared component files
+- genereer een herbruikbaar loading-bar component 'ng g component shared/loading-bar/loading-bar'
+- geneer een service die we alleen in de loading bar gaan gebruiken 'ng g service shared/loading-bar/loading-bar/loading-bar'
+- importeer de service in het component.
+  - voeg de service toe aan de providers array van het component//ieder instantie van de component zal een eigen instantie van de service hebben (component scoped)
+  - injecteer de service in de component class
+- 
+
 
 oefening ..:
 - aparte oefening voor uitleg over observables ?

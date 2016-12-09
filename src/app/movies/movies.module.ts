@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'; //needs to be imported by ngModule
 import { RouterModule, Routes } from '@angular/router';
 
+import { SharedModule } from '../shared/shared.module';
+
 import { MoviesComponent } from './movies.component';
 
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
@@ -19,7 +21,8 @@ import { MoviesRoutingModule } from './movies.routes.module';
   ],
   imports: [
     CommonModule,
-    MoviesRoutingModule
+    MoviesRoutingModule,
+    SharedModule
   ],
   exports: [
   ],
