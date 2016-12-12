@@ -11,16 +11,26 @@ export class MoviesComponent implements OnInit {
   public movies: Movie[];
   public selectedMovie: Movie;
 
-  constructor(private movieService: MovieService) { }
+  public moviesLoading: boolean;
+  public movieLoading: boolean;
+
+  constructor(private movieService: MovieService) {
+
+  }
 
   ngOnInit() {
-
-    this.movieService.getMovies().then(movies => this.movies = movies);
-
+    this.fetchMovies();
   }
 
   onMovieClicked(event:Movie): void {
-    this.selectedMovie = event; 
+    this.selectedMovie = event;
   }
 
+  fetchMovies(): void {
+    this.moviesLoading = true;
+    this.movieService.getMovies().then(movies => {
+        this.movies = movies;
+        this.moviesLoading = false;
+    });
+  }
 }

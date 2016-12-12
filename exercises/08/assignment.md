@@ -15,7 +15,7 @@ Assignment 8: Multiple feature modules
 - Change the selector of the dashboard component to `dashboard`;
 - Create a function `getFavMovies` in the movie service that only returns your favorite 3 movies;
 - Import the service into the dashboard component and retreive your favorite movies in the `ngOnInit` function;
-- Display your favorite movies as a list in the template of the dashboard component;
+- Display your favorite movies as a list in the template of the dashboard component with the `ngFor` directive;
 - Add the dashboard component to the template of the app component;
 
 **Result**:

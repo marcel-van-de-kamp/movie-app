@@ -160,15 +160,23 @@ Uitleg: the routerLinkActive directive kun je gebruiken om een css class toe te 
 - voeg de active class toe aan de stylesheet van de core/nav component en geef het active menu-item bijvoorbeeld een andere kleur of een underline 
 
 oefening ..: 
-uitleg:een shared module bevat components die overal in de applicatie hergebruikt worden. De shared module zal over het algemeen geen services providen, omdat deze niet singleton zullen zijn.
+uitleg:een shared module bevat components die overal in de applicatie hergebruikt worden. De shared module mag GEEN applicatie brede services providen, omdat deze niet dan singleton zullen zijn.
 - genereer een shared module met het commando 'ng g module shared'
 - verwijder de shared component files
-- genereer een herbruikbaar loading-bar component 'ng g component shared/loading-bar/loading-bar'
-- geneer een service die we alleen in de loading bar gaan gebruiken 'ng g service shared/loading-bar/loading-bar/loading-bar'
-- importeer de service in het component.
-  - voeg de service toe aan de providers array van het component//ieder instantie van de component zal een eigen instantie van de service hebben (component scoped)
-  - injecteer de service in de component class
-- 
+- genereer een herbruikbaar loading-container component 'ng g component shared/loading-container'
+  - Controleer of het component wordt gedeclareerd en geëxporteerd in de shared module
+  - verander de selector van de component naar cw-loading-container
+- Kopieer onderstaande html naar de template van de loading-container
+- kopieer onderstaande css naar de styling van de loading-container
+- Import the angular Input decorator and add a boolean input property `loading` to the loading-container component
+- voeg de shared module toe aan de movies module imports array
+- Gebruik de loading-container component in de movies component template als wrapper element van de movie list
+- bind the property `loading` of the container component to a property 'moviesLoading' in the movies component
+  - assign de moviesloading prop default naar true true
+  - set the moviesLoading property op false zo gauw de movies binnen zijn
+- voeg de shared module ook toe aan de dashboard module imports array en gebruik de loading container voor de favorite movies;
+
+- We now have a shared module that exposes reusable components/directives/pipes and can be imported by any module that needs them;
 
 
 oefening ..:
@@ -182,6 +190,13 @@ https://angular.io/docs/ts/latest/guide/user-input.html
 oefening component lifecycle hooks:
 - ngoninit, ngchange (ook dynamic forms), ngondestroy, er zijn nog veel meer
 https://angular-2-training-book.rangle.io/handout/advanced-components/component_lifecycle.html
+
+
+oefening component scoped service:
+- geneer een service die we alleen in de text-filter component gaan gebruiken 'ng g service shared/text-filter/text-filter'
+- importeer de service in het component.
+  - voeg de service toe aan de providers array van het component//ieder instantie van de component zal een eigen instantie van de service hebben (component scoped)
+  - injecteer de service in de component class
 
 oefening ...:
 - forms

@@ -11,12 +11,20 @@ import { MovieService } from '../movies/movie.service';
 export class DashboardComponent implements OnInit {
   public favMovies: Movie[];
 
+  public favsLoading: boolean;
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-
-    this.movieService.getFavMovies().then(movies => this.favMovies = movies);
-    
+    this.fetchFavMovies();
   }
 
+  fetchFavMovies(): void {
+    this.favsLoading = true;
+    this.movieService.getFavMovies().then(
+        movies => {
+            this.favMovies = movies;
+            this.favsLoading = false;
+            });
+    
+  }
 }

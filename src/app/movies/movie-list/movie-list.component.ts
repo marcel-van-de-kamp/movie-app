@@ -13,14 +13,15 @@ export class MovieListComponent implements OnInit {
 
   private clickedMovie: Movie;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+
   }
 
   onMovieClicked(movie:Movie):void {
     this.movieClicked.emit(movie);
     this.clickedMovie = movie;
   }
-
 }

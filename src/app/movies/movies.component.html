@@ -1,7 +1,8 @@
 <h2>All movies</h2>
 
-<app-movie-list [movies]="movies" (movieClicked)="onMovieClicked($event)"></app-movie-list>
-
+<cw-loading-container [loading]="moviesLoading" >
+    <app-movie-list [movies]="movies" (movieClicked)="onMovieClicked($event)"></app-movie-list>
+</cw-loading-container>
 
 <div *ngIf="selectedMovie">
   <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
