@@ -1,5 +1,3 @@
-<loading-bar></loading-bar>
-
 <ul>
   <li *ngFor="let movie of movies" [ngClass]="{ 'active': clickedMovie === movie }">
     <div>{{movie.name}} <button (click)="onMovieClicked(movie)">View movie</button></div>
