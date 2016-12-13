@@ -23,7 +23,7 @@ Assignment 15: Using view encapsulation and shadow DOM
 > Angular will default to an emulated shadow DOM and encapsulate the view, so it will still work if we don't use the native encapsulation
 - Also add a class `.active` to the movie list component style sheet `movie-list.component.scss`;
   - Change the text color in the class to a color, different from the navigation links;
-- Add a private property `clickedMovie` to the list component and set it in the `onMovieClicked` function;
+- Add a public property `clickedMovie` to the list component and set it in the `onMovieClicked` function;
 - Add an `ngClass` directive to the list item in the movie list template and use an object expression to set the `active` class when `clickedMovie` equals the current `movie` in the loop;
 
 **Result**:
