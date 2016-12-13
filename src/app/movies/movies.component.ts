@@ -23,7 +23,7 @@ export class MoviesComponent implements OnInit {
   }
 
   onMovieClicked(event:Movie): void {
-    this.selectedMovie = event;
+    this.selectedMovie = Object.assign({}, event);
   }
 
   fetchMovies(): void {

@@ -1,5 +1,5 @@
 <ul>
   <li *ngFor="let movie of movies" [ngClass]="{ 'active': clickedMovie === movie }">
-    <div>{{movie.name}} <button (click)="onMovieClicked(movie)">View movie</button></div>
+    <div>{{movie.name}} - {{movie.rating}} <button (click)="onMovieClicked(movie)">View movie</button></div>
   </li>
 </ul>
