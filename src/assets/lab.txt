@@ -179,24 +179,18 @@ uitleg:een shared module bevat components die overal in de applicatie hergebruik
 - We now have a shared module that exposes reusable components/directives/pipes and can be imported by any module that needs them;
 
 
-oefening ..:
-- aparte oefening voor uitleg over observables ?
+oefening user input:
+pas de details component aan zodat je de waardes kunt aanpassen
+- voeg twee input velden toe aan de details template van het type text (name en genre) en een input veld het type number (rating)
+ - gebruik de ngmodel directive om de inputs te 'two way' binden aan de name, genre en rating properties van de movie model object;
+ - the ngModel directive is located in the 'FormModule' from @angular/forms. add this module to the imports array of the movies module
+> Change the values of the inputs in the browser, you will immediatly see the changes reflected in the movie model object (detail and list)  
+> We don't want the change to be directly be reflected in the list, so we will copy the movie and 'fake' immutability;
+- 
 
-oefeningen user input:
-oefening...:
-- iets met input in detail die naam veranderd en doorloopt naar de list
+https://angular-2-training-book.rangle.io/handout/components/app_structure/two_way_data_binding.html
 https://angular.io/docs/ts/latest/guide/user-input.html
 
-oefening component lifecycle hooks:
-- ngoninit, ngchange (ook dynamic forms), ngondestroy, er zijn nog veel meer
-https://angular-2-training-book.rangle.io/handout/advanced-components/component_lifecycle.html
-
-
-oefening component scoped service:
-- geneer een service die we alleen in de text-filter component gaan gebruiken 'ng g service shared/text-filter/text-filter'
-- importeer de service in het component.
-  - voeg de service toe aan de providers array van het component//ieder instantie van de component zal een eigen instantie van de service hebben (component scoped)
-  - injecteer de service in de component class
 
 oefening ...:
 - forms
@@ -204,6 +198,26 @@ oefening ...:
 oefening ...:
 - dynamic forms
 
+
+
+
+oefening component lifecycle hooks:
+- ngoninit, ngchange (ook dynamic forms), ngondestroy, er zijn nog veel meer
+https://angular-2-training-book.rangle.io/handout/advanced-components/component_lifecycle.html
+
+
+oefening pipes:
+- sorteren van de movie list op basis van rating
+
+
+oefening ..:
+- aparte oefening voor uitleg over observables ?
+
+oefening component scoped service:
+- geneer een service die we alleen in de text-filter component gaan gebruiken 'ng g service shared/text-filter/text-filter'
+- importeer de service in het component.
+  - voeg de service toe aan de providers array van het component//ieder instantie van de component zal een eigen instantie van de service hebben (component scoped)
+  - injecteer de service in de component class
 
 
 oefening ...:

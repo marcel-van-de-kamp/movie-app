@@ -4,7 +4,7 @@ Assignment 16: Using view encapsulation and shadow DOM
 > ## Create a shared module and add a reusable loading component that is used by the movies and dashboard module
 
 **Links**:
-[shared module style guide](https://angular.io/docs/ts/latest/guide/style-guide.html#!#-a-id-04-10-a-shared-feature-module)
+- [shared module style guide](https://angular.io/docs/ts/latest/guide/style-guide.html#!#-a-id-04-10-a-shared-feature-module)
 
 **Steps**:
 - Generate a new module `shared` with the angular-cli command `ng g module shared`;
