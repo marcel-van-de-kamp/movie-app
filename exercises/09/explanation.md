@@ -1,3 +1,9 @@
+- Hier leg je een beetje uit waarom we een aparte route maken voor movies en dashboard.
+- Omdat we een bookmark willen kunnen leggen.
+- Omdat we een singleton navigatie component willen die voor iedere 'pagina' precies hetzelfde is.  
+
+
+
 Hier leg je uit wat routing is e.d.
 Meeste kun je kopieren uit links en tutorials.
 
