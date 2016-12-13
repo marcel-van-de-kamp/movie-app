@@ -24,7 +24,7 @@ Assignment 14: Creating a core module
 - Inject the `CoreModule` into its own constructor as a `parentModule` parameter;
   - To avoid a infinite injection loop, prepent the `@SkipSelf()` decorator to the parameter;
   - We expect the `CoreModule` to not exist yet, thats why we need to tell the injector that this is an optional parameter by also prepending the parameter with the `@Optional()` decorator;
-- Add a 'guard' to the constructor by checking if `parentModule` is null/undefined. If it is not, the core module has already been loaded and we need to throw an error / raise hell / crash everything;
+- Add a 'guard' to the constructor by checking if `parentModule` is null/undefined. If it is defined, the core module has already been loaded and we need to throw an error / raise hell / crash everything;
 
 **Result**:
 > We now have a singleton navigation component which is imported and used at the root level of the app.
