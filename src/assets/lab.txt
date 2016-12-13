@@ -185,15 +185,16 @@ pas de details component aan zodat je de waardes kunt aanpassen
  - gebruik de ngmodel directive om de inputs te 'two way' binden aan de name, genre en rating properties van de movie model object;
  - the ngModel directive is located in the 'FormModule' from @angular/forms. add this module to the imports array of the movies module
 > Change the values of the inputs in the browser, you will immediatly see the changes reflected in the movie model object (detail and list)  
-> We don't want the change to be directly be reflected in the list, so we will copy the movie and 'fake' immutability;
+> We don't want the changes to be directly be reflected in the list, so we will give a copy of the movie to the movie detail;
+- Use the Object.assign method to set the selectedMovie to a clone of the clicked movie in the movies component;
 - 
-
 https://angular-2-training-book.rangle.io/handout/components/app_structure/two_way_data_binding.html
 https://angular.io/docs/ts/latest/guide/user-input.html
 
 
-oefening ...:
-- forms
+oefening template driven forms:
+- formsmodule
+- 
 
 oefening ...:
 - dynamic forms
