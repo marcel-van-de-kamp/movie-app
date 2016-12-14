@@ -22,7 +22,7 @@ Assignment 13: Getting movies from a remote server
 - Declare two private constant properties `moviesUrl` and `moviesFavUrl` and assign the values `'api/movies'` and `'api/moviesFav'` respectively;
 >  We will edit the `getMovies` function to use the `httpService` to asynchronously get the remote movie data:
 - Remove the hardcoded array of movies from the `getMovies` function;
-- Call the `get` function on the `httpService` with the `moviesUrl`, assign the result a new local variable `observe`;
+- Call the `get` function on the `httpService` with the `moviesUrl`, assign the result to a new local variable `observe`;
 > As an intermediate step, we will convert the `observe` of type `Observable<Response>` to a more familiar `Promise` object:
 - Change the return type of the `getMovies` function to `Promise<Movies[]>`;
 - Import the `toPromise` rxjs operator by adding `import 'rxjs/add/operator/toPromise'`;
