@@ -9,7 +9,7 @@ Assignment 3: showing movie details
 - [angular ngIf directive](https://angular-2-training-book.rangle.io/handout/directives/ng_if_directive.html)
 
 **Steps**:
-- Add a property to the app component class `selectedMovie` of the type `Movie`;
+- Add a public property to the app component class `selectedMovie` of the type `Movie`;
 - Add a function to the app component class `onMovieClicked`; 
     - The function accepts a movie as parameter;
     - The function sets the `selectedMovie` property to the value of the parameter;

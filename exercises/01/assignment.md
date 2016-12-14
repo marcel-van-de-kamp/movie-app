@@ -13,7 +13,7 @@ Assignment 1: Displaying a list of movies
 - Declare a public property in the app component `movies` and give it the typing array of any `any[]`;
 - Initialize the movies array in the constructor as an array of movie objects;
   - Fill the array with a couple of good movies;
-  - A movie object has the following properties: name, genre, rating;
+  - A movie object has the following properties: id, name, genre, rating;
 - Create an unordered list `<ul>` in the template of the app component;
 - Create one list item in the list `<li>` and use an `*ngFor` to loop over the movies;
   - Display the name and rating for each movie using interpolation;

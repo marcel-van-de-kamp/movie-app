@@ -10,12 +10,12 @@ Assignment 4: Creating a movie detail component
 **Steps**:
 - Create a new component in the `movies` folder using the angular-cli generator command `ng g component movies/movie-detail` in the integrated terminal;
   - Double check if the component is imported in the app module and added to the ngModule `declarations` array;
-- Change the `selector` property of the movie-detail component to `movie-detail`;
+- Notice the `selector` property of the movie-detail component has become `cw-movie-detail`;
 - Import the angular `Input` decorator and create an input property `movie` of the type `Movie`;
 - Copy the movie detail HTML from the app component template to the movie detail component template;
     - Make sure the property bindings (interpolation) are set to the movie property of the detail component;
 - Replace the detail HTML in the app component template with the movie detail component;
-  - Use the movie detail component by adding a `<movie-detail>` element;   
+  - Use the movie detail component by adding a `<cw-movie-detail>` element;   
   - Add a property binding to the element that binds the input property `movie` to the `selectedMovie` of the app component;
 
 **Result**:
