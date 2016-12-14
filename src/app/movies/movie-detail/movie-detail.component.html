@@ -3,7 +3,12 @@
   <div>genre: {{movie.genre}}</div>
   <div>rating: {{movie.rating}}</div>
 
-    <div>name: <input type="text"  [(ngModel)]="movie.name" /></div>
+    <div>
+      <label>
+        <span>name:</span>
+        <input type="text"  [(ngModel)]="movie.name" />
+      </label>
+    </div>
     <div>genre: <input type="text" [(ngModel)]="movie.genre" (keydown.Escape)="onClearGenre()" /></div>
     <div>rate: <input type="number" [(ngModel)]="movie.rating" /></div>
 </div>
