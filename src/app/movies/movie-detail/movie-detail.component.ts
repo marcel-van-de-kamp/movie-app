@@ -15,4 +15,7 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClearGenre(): void {
+      this.movie.genre = '';
+  }
 }

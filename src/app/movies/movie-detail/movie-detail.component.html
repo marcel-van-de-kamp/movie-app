@@ -3,10 +3,7 @@
   <div>genre: {{movie.genre}}</div>
   <div>rating: {{movie.rating}}</div>
 
-  <form #movieForm="ngForm" (ngSubmit)="onSubmit()">
-    <div>name: <input type="text" name="name" [(ngModel)]="movie.name" /></div>
-    <div>genre: <input type="text" name="genre" [(ngModel)]="movie.genre" /></div>
-    <div>rate: <input type="number" name="rating" [(ngModel)]="movie.rating" /></div>
-    <button type="submit">Save</button>
-  </form>
+    <div>name: <input type="text"  [(ngModel)]="movie.name" /></div>
+    <div>genre: <input type="text" [(ngModel)]="movie.genre" (keydown.Escape)="onClearGenre()" /></div>
+    <div>rate: <input type="number" [(ngModel)]="movie.rating" /></div>
 </div>
