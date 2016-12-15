@@ -194,10 +194,42 @@ https://angular.io/docs/ts/latest/guide/user-input.html
 
 oefening template driven forms:
 allereerst de notie dat er twee methodes zijn om formulier te maken in angular, template driven en model driven forms (reactive forms)
+Wat zijn template driven forms, uitleg van Todd Motto: https://toddmotto.com/angular-2-forms-template-driven#high-level-terminology
 Wat zijn reactive forms, uitleg van Todd Motto:  https://toddmotto.com/angular-2-forms-reactive#high-level-terminology
 - formsmodule importeren
-- formtag en novalidate toevoegen en submit button
-- 
+- form novalidate toevoegen 
+> Angular geeft nu een error in de console, see if you can fix this
+- voeg aan alle input fields een name attribute en value toe
+- Voeg een template reference variable `movieForm` toe aan de form tag en assign the ngForm object to it
+> Je kunt nu bij het formulier object dat angular voor je maakt, doormiddel van de template reference variable.
+> Probeer eens de `json` filter/pipe te gebruiken om de value van het formulier te outputten: `{{ movieForm.value | json }}` 
+- De state van de movie wordt nu zowel in onze property movie (two way binding) als in het formulier bijgehouden dit is niet handig.
+- bovendien willen we pas de details aanpassen wanneer we op een opslaan knop klikken:
+  - Verwijder de event bindings van de ngModel directives zodat je alleen de model bindings overhoud to display de initial state
+> Je kunt nu zien dat de input changes alleen naar de ngform value worden gereflecteerd
+- voeg een save knop van het type submit toe onderaan het formulier
+- Bind de ngSubmit event die wordt ge-emit door de ngForm op de form element aan een functie en geef de value van het formulier mee: `onSubmit(movieForm.value)`
+- Maak de functie onSubmit aan in de detail component met een parameter van het type `Movie`, en gebruik Object.assign om de waardes aan de movie property toe te kennen
+> we moeten onze onkeydown nog aanpassen in de component, omdat deze de model direct aanpast ipv het formulier
+- Maak een template reference variable `#genre` op de genre input en assign it the ngModel object to it
+- verwijder de onClearGenre functie en gebruik de template reference variable om in de template de genre te clearen `#genre.control.setValue`
+
+> We now use a ngForm to capture input changes without directly modifying the model, and we are writing the data to the model on submit.
+> Next we want to validate the input changes and show validation messages;
+
+nieuwe oefening: validation in de form:
+
+
+
+
+> Next, we want to persist the model to the data store
+
+
+nieuwe oefening opslaan van de shiznit?
+
+
+
+
 
 oefening ...:
 - dynamic forms
