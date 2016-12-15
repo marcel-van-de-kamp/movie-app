@@ -24,7 +24,6 @@ Assignment 9: Routing between components
 
 - Remove the selectors from the movies and dashboard component;
 - Remove the movies and dashboard components from the `exports` array in the movies and dashboard module;
-- Replace the `movies` and `dashboard` components from the app component template with a `<router-outlet>` component;
+- Replace the `cw-movies` and `cw-dashboard` components from the app component template with a `<router-outlet>` component;
 
-**Result**:
-> You can now navigate to URL `localhost:4200/dashboard` and `localhost:4200/movies` to activate the routes you created.
+> You will now get an error `router-outlet is not a known element`, so please continue with assignment 10 to make the app work again.

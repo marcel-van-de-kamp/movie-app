@@ -19,4 +19,6 @@ Assignment 10: Redirecting to another route
 - Add the `routeProviders` variable to the end of the `imports` array of the app module;
 
 **Result**:
-> When you now navigate to the empty route `localhost:4200`, the router will automatically redirect to the `dashboard` route.
+> When you now navigate to the empty route `localhost:4000`, the router will automatically redirect to the `dashboard` route.
+
+> You can now navigate to URL `localhost:4000/dashboard` and `localhost:4000/movies` to activate the routes you created.
