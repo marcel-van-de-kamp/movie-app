@@ -16,13 +16,11 @@ Assignment 7: Creating a feature module
   - Move the imports of the movie service, movie detail and movie list component from the app module to the movies module;
   - Add the components to the `declarations` array and the service to the `providers` array;
 - Import the movie functionality into the app module:
-  - Remove the import of the `MoviesComponent` from the app module that angular-cli has registered automatically;
   - Import the movies module into the app module and add it to the `imports` array;
 - Move all movies functionality from the app component to the movies component:
   - Move any movie imports, properties and functions from the app component to the movies component;
   - Move the movie list and detail elements from the app component template to the movies component template;
-- Change the selector of the movies component to `movies`;
-- Add the movies component in the template of the app component, to get the application working again;
+- Add the movies component `cw-movies` in the template of the app component, to get the application working again;
 
 **Result**:
 > We now have a movies feature module that encapsulates all movie specific material.

@@ -24,7 +24,7 @@ Assignment 13: Getting movies from a remote server
 - Remove the hardcoded array of movies from the `getMovies` function;
 - Call the `get` function on the `httpService` with the `moviesUrl`, assign the result to a new local variable `observe`;
 > As an intermediate step, we will convert the `observe` of type `Observable<Response>` to a more familiar `Promise` object:
-- Change the return type of the `getMovies` function to `Promise<Movies[]>`;
+- Change the return type of the `getMovies` function to `Promise<Movie[]>`;
 - Import the `toPromise` rxjs operator by adding `import 'rxjs/add/operator/toPromise'`;
 - Call the `toPromise` operator/function on the `observe` variable, and assign the result to a new variable `promise`;
 > Lastly, we need to extract the json data from the http response object an return it:
@@ -39,4 +39,4 @@ Assignment 13: Getting movies from a remote server
 - *Repeat the steps for the `getFavMovies` function*
 
 **Result**:
-> We now asynchronously retreive the movies from a remote/stub server.
+> We now asynchronously retrieve the movies from a remote/stub server.
