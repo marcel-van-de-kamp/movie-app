@@ -193,7 +193,10 @@ https://angular.io/docs/ts/latest/guide/user-input.html
 
 
 oefening template driven forms:
-- formsmodule
+allereerst de notie dat er twee methodes zijn om formulier te maken in angular, template driven en model driven forms (reactive forms)
+Wat zijn reactive forms, uitleg van Todd Motto:  https://toddmotto.com/angular-2-forms-reactive#high-level-terminology
+- formsmodule importeren
+- formtag en novalidate toevoegen en submit button
 - 
 
 oefening ...:
