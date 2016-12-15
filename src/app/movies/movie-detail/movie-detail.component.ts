@@ -12,10 +12,9 @@ export class MovieDetailComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  onClearGenre(): void {
-      this.movie.genre = '';
+  onSubmit(value: Movie): void {
+    Object.assign(this.movie, value);
   }
 }
