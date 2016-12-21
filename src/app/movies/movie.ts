@@ -1,5 +1,3 @@
- 
-
 /**
  * NOTE: properties are optional with below syntax when explicitly creating a new instance
  * and can only be assigned after creating a new instance:
@@ -36,8 +34,8 @@ export class Movie {
   public genre: string;
   public rating: number;
 
-    constructor(id:number, name: string, genre: string, rating: number) {
-        //assigning CONSTRUCTOR FUNCTION PARAMETER values to CLASS PROPERTIES
+    constructor(id: number, name: string, genre: string, rating: number) {
+        // assigning CONSTRUCTOR FUNCTION PARAMETER values to CLASS PROPERTIES
         this.id = id;
         this.genre = genre;
         this.name = name;

@@ -9,7 +9,8 @@ import 'rxjs/add/operator/publish';
 export class LoadingBarService {
 
     private currentPercentage: number;
-    private observable: ConnectableObservable<number>;//hot observable: //http://blog.thoughtram.io/angular/2016/06/16/cold-vs-hot-observables.html
+    // hot observable: //http://blog.thoughtram.io/angular/2016/06/16/cold-vs-hot-observables.html
+    private observable: ConnectableObservable<number>;
     private intervalId: any;
 
     constructor() {
@@ -19,12 +20,12 @@ export class LoadingBarService {
     start(): ConnectableObservable<number> {
         this.observable = new Observable((observer: Observer<number>) => {
 
-            //TODO: should provide window and inject it: http://stackoverflow.com/a/40292188/5182446
+            // TODO: should provide window and inject it: http://stackoverflow.com/a/40292188/5182446
             this.intervalId = setInterval(() => {
                 this.currentPercentage += 10;
                 observer.next(this.currentPercentage);
 
-                if(this.currentPercentage === 100) {
+                if (this.currentPercentage === 100) {
                     clearInterval(this.intervalId);
                     observer.complete();
                 }

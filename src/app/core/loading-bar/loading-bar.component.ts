@@ -5,7 +5,7 @@ import { LoadingBarService } from './loading-bar.service';
 import 'rxjs/add/operator/map';
 
 @Component({
-    selector: 'loading-bar',
+    selector: 'cw-loading-bar',
     templateUrl: './loading-bar.component.html',
     styleUrls: ['./loading-bar.component.scss'],
     providers: [LoadingBarService]

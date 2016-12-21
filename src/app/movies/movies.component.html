@@ -1,9 +1,9 @@
 <h2>All movies</h2>
 
 <cw-loading-container [loading]="moviesLoading" >
-    <app-movie-list [movies]="movies" (movieClicked)="onMovieClicked($event)"></app-movie-list>
+    <cw-movie-list [movies]="movies" (movieClicked)="onMovieClicked($event)"></cw-movie-list>
 </cw-loading-container>
 
 <div *ngIf="selectedMovie">
-  <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
+  <cw-movie-detail [movie]="selectedMovie"></cw-movie-detail>
 </div>

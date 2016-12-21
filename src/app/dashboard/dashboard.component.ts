@@ -4,7 +4,6 @@ import { Movie } from '../movies/movie';
 import { MovieService } from '../movies/movie.service';
 
 @Component({
-  selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
@@ -25,6 +24,5 @@ export class DashboardComponent implements OnInit {
             this.favMovies = movies;
             this.favsLoading = false;
             });
-    
   }
 }

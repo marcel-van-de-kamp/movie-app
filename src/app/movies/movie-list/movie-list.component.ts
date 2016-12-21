@@ -3,12 +3,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Movie } from '../movie';
 
 @Component({
-  selector: 'app-movie-list',
+  selector: 'cw-movie-list',
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
-  @Input() movies:Movie[];
+  @Input() movies: Movie[];
   @Output() movieClicked = new EventEmitter();
 
   private clickedMovie: Movie;
@@ -20,7 +20,7 @@ export class MovieListComponent implements OnInit {
 
   }
 
-  onMovieClicked(movie:Movie):void {
+  onMovieClicked(movie: Movie): void {
     this.movieClicked.emit(movie);
     this.clickedMovie = movie;
   }

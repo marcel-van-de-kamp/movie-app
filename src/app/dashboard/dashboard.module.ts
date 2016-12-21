@@ -9,7 +9,6 @@ import { DashboardComponent } from './dashboard.component';
 @NgModule({
   imports: [
     CommonModule,
-
     SharedModule,
     DashboardRoutingModule
   ],
