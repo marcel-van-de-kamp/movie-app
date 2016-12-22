@@ -1,4 +1,4 @@
-Assignment 16: Using view encapsulation and shadow DOM
+Assignment 16: Creating a shared module
 ==============================================
 
 > ## Create a shared module and add a reusable loading component that is used by the movies and dashboard module
@@ -17,7 +17,7 @@ Assignment 16: Using view encapsulation and shadow DOM
 - Use the `cw-loading-container` component in the movies component template as a wrapper element for the movies list;
 - Bind the property `loading` of the container component to a property `moviesLoading` in the movies component
   - Assign the `moviesLoading` prop default to `true`;
-  - Set the `moviesLoading` property to `false` as soon as the movies are retreived;
+  - Set the `moviesLoading` property to `false` as soon as the movies are retrieved;
 - Add the shared module to the dashboard module `import` array and also use the loading container for the favorite movies;  
 
 **Result**:

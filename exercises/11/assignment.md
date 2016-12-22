@@ -14,6 +14,7 @@ Assignment 11: Extracting the routes to their own module
  - Import the needed `MoviesComponent`;
 - Add the `RouterModule` to the `exports` array of the `MoviesRoutingModule`;
 - Import the `MoviesRoutingModule` into the movies module and add in to the end of the `imports` array;
+- Delete any lingering router imports from the movie module;
 - Repeat the above steps for the `dashboard` and the `app` modules by creating the files `dashboard-routing.module.ts` and `app-routing.module.ts`;
 
 **Result**:
