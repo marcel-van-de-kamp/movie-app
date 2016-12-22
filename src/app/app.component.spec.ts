@@ -1,33 +1,44 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { NavComponent } from './core/nav/nav.component';
+import { RouterLinkStubDirective }   from '../testing';
+import { RouterOutletStubComponent } from '../testing';
 
-describe('AppComponent', () => {
-  beforeEach(() => {
+fdescribe('AppComponent', () => {
+  let app: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let el: HTMLElement;
+
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        NavComponent,
+        RouterLinkStubDirective,
+        RouterOutletStubComponent
       ],
-    });
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.componentInstance;
+    fixture.detectChanges(); // will do the first render (ngOnInit)
   });
 
-  it('should create the app', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
+  it('should create the app', () => {
     expect(app).toBeTruthy();
-  }));
+  });
 
-  it(`should have as title 'app works!'`, async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
-  }));
+  it(`should have as title 'app works!'`, () => {
+    expect(app.title).toEqual('MOVIES!');
+  });
 
-  it('should render title in a h1 tag', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
-  }));
+  it('should render title in a h1 tag', () => {
+    el = fixture.debugElement.nativeElement;
+    expect(el.querySelector('h1').textContent).toContain('MOVIES!');
+  });
 });
