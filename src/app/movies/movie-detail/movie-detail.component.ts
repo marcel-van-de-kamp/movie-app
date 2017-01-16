@@ -14,7 +14,11 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() { }
 
-  onSubmit(value: Movie): void {
-    Object.assign(this.movie, value);
+  onSubmit(value: Movie, isValid: boolean): void {
+    if(isValid) {
+      Object.assign(this.movie, value);
+    } else {
+      alert('form not valid');
+    }
   }
 }

@@ -12,7 +12,7 @@ Assignment 18: Processing user input with a template driven form
 - *[pipes](https://angular.io/docs/ts/latest/guide/pipes.html)*
 
 **Steps**:
-- When using template driven forms or the `NgModule` directive, we need to import the `FormsModule` located in `@angular/forms`
+- When using template driven forms and/or the `NgModule` directive, we need to import the `FormsModule` located in `@angular/forms`
 - encapsulate the input fields with a `<form novalidate>` element
 > Angular will slap an error in your face (actually in the console), see if you can fix it
 - Add a `name` attribute to al input fields and set a value to it 

@@ -3,15 +3,21 @@
   <div><span>genre:</span> {{movie.genre}}</div>
   <div><span>rating:</span> {{movie.rating}}</div>
 
-  <form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm.value)" novalidate>
+  <form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm.value, movieForm.valid)" novalidate>
     <div>
       <span>name:</span>
-      <input type="text" name="name" [ngModel]="movie.name" />
+      <input type="text" name="name" #movieName="ngModel" [ngModel]="movie.name" required />
+      <span *ngIf="movieName.errors?.required">
+        Name is required!
+      </span>
     </div>
 
     <div>
       <span>genre:</span>
-      <input type="text" [ngModel]="movie.genre" name="genre" #genre="ngModel" (keydown.Escape)="genre.control.setValue('')" />
+      <input type="text" [ngModel]="movie.genre" name="genre" #genre="ngModel" (keydown.Escape)="genre.control.setValue('')" required />
+       <span *ngIf="genre.errors?.required">
+        Genre is required!
+      </span>
     </div>
 
     <div>

@@ -25,6 +25,7 @@ x voor core guard oefening een lazy loading oefening, verplaats deze oefeningen 
 
 
 - ngClass oefening maken?
+- model driven forms opdracht toevoegen, afhankelijk van studenten achtergrond
 - per onderwerp voor angular2 nog een sheet maken: opdr 1,2,3 = structural directives etc.
 - Routing met angular-cli voor dashboard doen
 - evaluatie formulier opmaken en na trainingen versturen
