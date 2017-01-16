@@ -15,8 +15,8 @@ Assignment 17: Processing user input
 **Steps**:
 - Add two input fields of type `text` (name and genre) to the movie-detail component template and one of type `number` (rating)
 - The `NgModel` directive is exported from the `FormsModule` located in `@angular/forms`. Add this module to the `imports` array of the movies module
-- Use the `ngModel` directive to two way bind the inputs to the name, genre and rating properties of the movie Object
-> The `ngModel` directive is exported from the `FormModule` and can be used for 'two way binding' with input elements
+- Use the `ngModel` directive to two way bind the inputs to the name, genre and rating properties of the movie object
+> The `ngModel` directive is exported from the `FormModule` and can be used as syntactic sugar for 'two way binding' with input elements
 - Add the `FormsModule` located in `@angular/forms` to the `imports` array of the movies module
 > Test it in the browser and see what happens.  
 - *testing testing.. wtf..?*

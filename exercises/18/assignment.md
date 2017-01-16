@@ -20,8 +20,8 @@ Assignment 18: Processing user input with a template driven form
 > Your now able to access the form object that angular creates in the template via the `movieForm` variable.  
 > Check it out and output its value in the template by using the `json` filter/pipe `{{ movieForm.value | json }}`
 
-> We now have two seperate states to keep track of inside the detail component, but we should let `NgForm` do all the work for us.
-> Besides we only want the details to be updated once we press a save button:
+> We now have two seperate states to keep track of inside the detail component, but we should let `NgForm` do all the work for us,
+> besides that we only want the details to be updated once we press a save button:
 - Remove the event bindings from the `ngModel` directives so only the changes to the model are reflected to the view
 - Add a save button with type `submit` to the bottom of the form
 - Add a function `onSubmit` to the movie detail component with one parameter `value` of type `any`
@@ -31,6 +31,7 @@ Assignment 18: Processing user input with a template driven form
 > Our model still changes directly when we press the *Escape* key in the `genre` input field
 - Create a template reference variable `#genre` on the genre input element and assign the `ngModel` object to it
 - Remove the `onClearGenre` function from the component and use the template reference variable to clear the genre *Escape* key: `genre.control.setValue('')` 
+> By only one way binding the form model, the form also can be easily reset because we still have the original data in the `movie` input property
 
 **Result**:
 > We now use a ngForm to capture input changes without directly modifying the model, and we are writing the data to the model on submit.
