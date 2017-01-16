@@ -1,0 +1,22 @@
+<div>
+  <h2>{{movie.name}}</h2>
+  <div><span>genre:</span> {{movie.genre}}</div>
+  <div><span>rating:</span> {{movie.rating}}</div>
+
+  <form [formGroup]="movieForm" (ngSubmit)="onSubmit()" novalidate>
+    <div>
+      <span>name:</span>
+      <input type="text" formControlName="name" />
+    </div>
+    <div>
+      <span>genre:</span>
+      <input type="text" formControlName="genre" (keydown.Escape)="genre.control.setValue('')" />
+    </div>
+    <div>
+      <span>rating:</span>
+      <input type="number" formControlName="rating" />
+    </div>
+    <button type="submit">Save</button>
+    {{movieForm.value | json}}
+  </form>
+</div>

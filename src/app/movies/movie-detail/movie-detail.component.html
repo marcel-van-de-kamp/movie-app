@@ -14,14 +14,16 @@
 
     <div>
       <span>genre:</span>
-      <input type="text" [ngModel]="movie.genre" name="genre" #genre="ngModel" (keydown.Escape)="genre.control.setValue('')" required />
-       <span *ngIf="genre.errors?.required">
+      <input type="text" [ngModel]="movie.genre" name="genre" 
+        #genre="ngModel" (keydown.Escape)="genre.control.setValue('')" required />
+
+      <span *ngIf="genre.errors?.required">
         Genre is required!
       </span>
     </div>
-
     <div>
-      <span>rating:</span> <input type="number" name="rating" [ngModel]="movie.rating" />
+      <span>rating:</span>
+      <input type="number" name="rating" [ngModel]="movie.rating" />
     </div>
     <button type="submit">Save</button>
     <!--{{genre.value | json}}-->
