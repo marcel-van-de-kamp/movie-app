@@ -14,7 +14,7 @@ export class MovieDetailReactiveComponent implements OnInit {
   builder: FormBuilder;
   movieForm: FormGroup;
 
-  constructor(builder: FormBuilder) { 
+  constructor(builder: FormBuilder) {
     this.builder = builder;
   }
 
@@ -23,6 +23,13 @@ export class MovieDetailReactiveComponent implements OnInit {
   }
 
   initForm(): void {
+
+    // this.movieForm = new FormGroup({
+    //   name: new FormControl(this.movie.name),
+    //   genre: new FormControl(this.movie.genre),
+    //   rating: new FormControl(this.movie.rating)
+    // });
+
     this.movieForm = this.builder.group({
       name: [this.movie.name, [ Validators.required, Validators.minLength(4)] ],
       genre: [this.movie.genre, [Validators.required]],

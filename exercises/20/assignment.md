@@ -8,32 +8,33 @@ Assignment 18: Processing user input with a model driven form
 - [model driven forms fundamentals](https://toddmotto.com/angular-2-forms-reactive#ngmodule-and-reactive-forms)
 - [formcontrol api](https://angular.io/docs/ts/latest/api/forms/index/FormControl-class.html)
 - [formgroup api](https://angular.io/docs/ts/latest/api/forms/index/FormGroup-class.html)
-- [formbuilder api](https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html)
+- &#185; [formbuilder api](https://angular.io/docs/ts/latest/api/forms/index/FormBuilder-class.html)
 - [template reference variable](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ref-vars)
 - *[pipes](https://angular.io/docs/ts/latest/guide/pipes.html)*
 
 **Steps**:
-- When using model driven forms, we need to import the `ReactiveFormsModule` located in `@angular/forms`
+- When using model driven forms, the `ReactiveFormsModule` has to be imported into the movies module from `@angular/forms`
 - encapsulate the input fields with a `<form novalidate>` element
-> Angular will slap an error in your face (actually in the console), see if you can fix it
-- Add a `name` attribute to al input fields and set a value to it 
-- Add a *template reference variable* `movieForm` to the `form` element and assign the `ngForm` object to it
-> Your now able to access the form object that angular creates in the template via the `movieForm` variable.  
-> Check it out and output its value in the template by using the `json` filter/pipe `{{ movieForm.value | json }}`
-
-> We now have two seperate states to keep track of inside the detail component, but we should let `NgForm` do all the work for us,
-> besides that we only want the details to be updated once we press a save button:
-- Remove the event bindings from the `ngModel` directives so only the changes to the model are reflected to the view
 - Add a save button with type `submit` to the bottom of the form
-- Add a function `onSubmit` to the movie detail component with one parameter `value` of type `any`
-> If you used the same names in the `name` attributes as the property names of a movie, you could also type the `value` parameter as a `Movie`
-- Map the properties on the `value` parameter to our `movie` model object. You could use `Object.assign` if `value` actually is a `Movie`
-- Bind de `ngSubmit` event that is emitted by the `ngForm` directive on the `<form>` element to the `onSubmit` function and supply the value of the form as parameter: `onSubmit(movieForm.value)`
-> Our model still changes directly when we press the *Escape* key in the `genre` input field
-- Create a template reference variable `#genre` on the genre input element and assign the `ngModel` object to it
-- Remove the `onClearGenre` function from the component and use the template reference variable to clear the genre *Escape* key: `genre.control.setValue('')` 
-> By only one way binding the form model, the form also can be easily reset because we still have the original data in the `movie` input property
+- Remove all `ngModel` directives from the template, we don't need 'automagic' template binding in model driven forms
+  - You can also savely remove the `FormsModule` import from the movies module now because we don't use it anymore.
+- To build a model driven form we need the `FormGroup` en `FormControl` classes, import these in the detail component from `@angular/forms`
+- Declare a class property `movieForm` of type `FormGroup` en assign a new `FormGroup` object to it in the`ngOnInit` function
+- Supply an object literal to the `FormHroup` as first parameter
+  - For every input field on the form, add a property to the object and assign a new `FormControl` object as value to it
+  - Supply an 'initial state/value' to each `FormControl`
+> Above steps can be simplified by using the angular `FormBuilder` service
+- Import the `FormBuilder` from `@angular/forms`, inject it into the constructor and store it as a class property
+- &#185; Rewrite the `FormGroup` and `FormControls` using the `FormBuilder` in `ngOnInit` function
+> To synchronize the created `FormGroup` and `FormControl`'s to the template we use the `formGroup` and `formControlName` directives
+- Add a property binding `[formGroup]` to the `form` element and bind it to the `movieForm` object 
+- Add a `formControlName` directive to each input field and use the same name you used in the `ngOnInit` function, for example `formControlName="genre"`
+> The `FormGroup` we bind to our root `form` element will store and handle all input and validations of its child controls and groups
+- Add an event binding `(ngSubmit)` to the form element and call `onSubmit()`
+- Create the function `onSubmit` in the detail component class
+  - Map the properties on the `value` property of our `movieForm` to our `movie` model object to simulate a 'save'
+  > You could use `Object.assign` if `value` is an actual `Movie`
 
 **Result**:
-> We now use a ngForm to capture input changes without directly modifying the model, and we are writing the data to the model on submit.
+> We now use a FormGroup and FormControl to capture input changes without directly modifying the model, and we are writing the data to the model on submit.
 > Next we want to validate the input changes and show validation messages;
