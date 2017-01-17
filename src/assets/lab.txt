@@ -260,7 +260,26 @@ Wat zijn reactive forms, uitleg van Todd Motto:  https://toddmotto.com/angular-2
 
 
 oefening: reactive form validation:
-- 
+- > Name and genre are required fields and name should have at least 4 characters.
+> Validators can be set by adding them as a second (array) parameter to the `FormControl` objects
+- Import the standard angular `Validators` from `@angular/forms`
+- Add a second parameter to the genre `FormControl`: an Array with `Validators.required` validator function as array item
+- Do the same for the name `FormControl`, but also add a second validator `Validators.minLength(4)`, which will return a validator function
+> Angular will add failed validation rules to the `FormControl` object as an `errors` property
+- Create a new `<span>` element beneath the `name` input field and display an error text in the `<span>`
+ - Add an `*ngIf` directive to the `<span>` and use the 'errors' property to check if the 'required' rule is present: `movieForm.controls.name.errors?.required`
+ - Extend the `*ngIf` condition with `&& movieForm.controls.name.touched` to make sure the error only appears when the user has 'touched' it
+- Do the same for the genre control and for the `minlength` error of the name control
+> You can now see the errors in the browser when you delete the characters from the name or genre input
+
+> Creating `FormGroup`s and `FormControl`s can be simplified by using the angular `FormBuilder` service
+- Import the `FormBuilder` from `@angular/forms`, inject it into the constructor and store it as a class property
+- &#185; Rewrite the `FormGroup` and `FormControls` using the `FormBuilder` in `ngOnInit` function
+
+> Now before submitting to the server, we need to check if the form is valid
+- Use the `movieForm` in the `onSubmit` function to check if the form is valid (`movieForm.valid`) before using it's value
+> Out of the box Angular 2 supplies the required, minlength, maxlength and pattern Validators
+> To validate the min (1) and max (10) for the rating input we need to create a custom Validator. We will do this in another assignment
 
 oefening: custom form validator directive voor rating, te gebruiken in template driven en model driven forms:
 - create a class `CustomValidators` in the app folder 
@@ -268,8 +287,6 @@ oefening: custom form validator directive voor rating, te gebruiken in template 
   - Add a static function that validates a max value
 - create a directive, import CustomValidators and implement Validator interface
   - https://github.com/yuyang041060120/ng2-validation/blob/master/src/directives/min.ts
-
-
 
 
 oefening: in service uitbreiding over observables:
