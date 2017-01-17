@@ -22,14 +22,25 @@ x enums oefening niet bitwise notation of flags....
 x directives array eruit in slides
 x oefening 11 routing module eigen file kun je ook de routermodule uit app/movie/dshbaord module halen
 x voor core guard oefening een lazy loading oefening, verplaats deze oefeningen naar achteren (genoteerd in nieuwe opzet opdrachten)
+x model driven forms opdracht toevoegen, afhankelijk van studenten achtergrond
 
+TODO:
+- volgorde veranderen van opdrachten
+  - opdrachten aanpassen aan volgorde
+  - onderwerpen opdracht 0 explanation vergelijken met mail mark
+  - namen van folders : onderwerp toevoegen per nummer : 01 - creating components
+  - per onderwerp voor angular2 een sheet maken
 
-- ngClass oefening maken?
-- model driven forms opdracht toevoegen, afhankelijk van studenten achtergrond
-- per onderwerp voor angular2 nog een sheet maken: opdr 1,2,3 = structural directives etc.
-- Routing met angular-cli voor dashboard doen
+- steps lostrekken van opdracht in aparte file
+- schema tekenen van opdrachten flow + generieke/extra opdrachten
+- explanation file alleen op plekken waar dat nodig is, zoals ngmodel
+
+- overige opdrachten uit lab verder uitwerken
+  - welke lifecycle hook gebruiken voor initform?
+  - ngClass oefening maken
+  - Routing met angular-cli voor dashboard doen
+
 - evaluatie formulier opmaken en na trainingen versturen
-- explanation files vullen of verwijderen
 
 *nieuwe opzet opdrachten volgorde*:
 - movie list en movie details
