@@ -7,16 +7,25 @@
     <div>
       <span>name:</span>
       <input type="text" formControlName="name" />
+      <span *ngIf="movieForm.controls.name.errors?.required">
+        field is required!
+      </span>
+      <span *ngIf="movieForm.controls.name.errors?.minlength">
+        field must be at least 4 characters!
+      </span>
     </div>
     <div>
       <span>genre:</span>
       <input type="text" formControlName="genre" (keydown.Escape)="genre.control.setValue('')" />
+      <span *ngIf="movieForm.controls.genre.errors?.required">
+        field is required!
+      </span>
     </div>
     <div>
       <span>rating:</span>
       <input type="number" formControlName="rating" />
     </div>
-    <button type="submit">Save</button>
+    <button type="submit" [disabled]="!movieForm.valid">Save</button>
     {{movieForm.value | json}}
   </form>
 </div>

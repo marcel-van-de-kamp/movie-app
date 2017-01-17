@@ -25,9 +25,9 @@ export class MovieDetailReactiveComponent implements OnInit {
   initForm(): void {
 
     // this.movieForm = new FormGroup({
-    //   name: new FormControl(this.movie.name),
-    //   genre: new FormControl(this.movie.genre),
-    //   rating: new FormControl(this.movie.rating)
+    //   name: new FormControl(this.movie.name, [Validators.required, Validators.minLength(4)]),
+    //   genre: new FormControl(this.movie.genre, [Validators.required]),
+    //   rating: new FormControl(this.movie.rating, [Validators.nullValidator])
     // });
 
     this.movieForm = this.builder.group({
