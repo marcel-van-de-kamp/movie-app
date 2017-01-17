@@ -259,6 +259,9 @@ Wat zijn reactive forms, uitleg van Todd Motto:  https://toddmotto.com/angular-2
 > We hebben nog geen validatie toegevoegd, daarom is het formulier altijd valide
 
 
+oefening: reactive form validation:
+- 
+
 oefening: custom form validator directive voor rating, te gebruiken in template driven en model driven forms:
 - create a class `CustomValidators` in the app folder 
   - Add a static function that validates a min value
