@@ -22,6 +22,8 @@ Assignment 17: Processing user input
 - *testing testing.. wtf..?*
 > Oops, we don't want the changes to directly be reflected in the movie list as well, so we need to decouple its model
 - In the movies component, use the `Object.assign` function to set the `selectedMovie` property to a clone of the clicked movie (event)
+
+**extra**
 > As an **extra** functionality, we want to clear the `genre` input when the user presses the escape button
 - Add a `keydown` event binding to the `genre` input element and call the `onGenreKeyDown($event)` function with the click event as payload (`$event`) 
 - Add a method `onNameKeyDown` to the movie detail component that accepts an event parameter of type `KeyBoardEvent`

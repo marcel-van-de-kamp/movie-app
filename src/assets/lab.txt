@@ -217,7 +217,7 @@ Wat zijn reactive forms, uitleg van Todd Motto:  https://toddmotto.com/angular-2
 > We now use a ngForm to capture input changes without directly modifying the model, and we are writing the data to the model on submit.
 > Next we want to validate the input changes and show validation messages;
 
-nieuwe oefening: simple form validation:
+oefening: simple form validation:
 > Name and genre are required fields and the added rating should be a number between 0 and 11.
 - Add a `required' html attribute to the 'name' input element to mark is as required
 - Add a template reference variable `#movieName` to the `name` input and assign its `ngModel` to it
@@ -234,7 +234,32 @@ nieuwe oefening: simple form validation:
 > Out of the box Angular 2 supplies the required, minlength, maxlength and pattern Validators
 > To validate the min and max rating we need to create a custom Validator. We will do this in another assignment
 
-nieuw oefening: custom form validator directive:
+oefening: reactive form:
+allereerst de notie dat er twee methodes zijn om formulier te maken in angular, template driven en model driven forms (reactive forms)
+Wat zijn template driven forms, uitleg van Todd Motto: https://toddmotto.com/angular-2-forms-template-driven#high-level-terminology
+Wat zijn reactive forms, uitleg van Todd Motto:  https://toddmotto.com/angular-2-forms-reactive#high-level-terminology
+- reactiveformsmodule importeren in de movies module
+- form novalidate toevoegen 
+- voeg onderaan het formulier een button toe van het type submit
+- verwijder alle ngmodel directives uit de template, deze 'automagische' template binding gebruiken we niet in model driven forms
+- Je kunt nu ook de `FormsModule` import verwijderen uit de movie module, omdat we die niet meer gebruiken
+- om een model driven form op te bouwen hebben we `FormGroup` en `FormControl` nodig, importeer deze in de detail component van '@angular/forms'
+- Declareer een class property `movieForm` van het type `FormGroup` en assign een nieuw FormGroup object in de `ngOnInit` functie
+- Geef als eerst parameter aan de `FormGroup` een literal object mee
+  - Maak voor elk input veld in het formulier een property in het object aan met als waarde een nieuw `FormControl` object
+  - geef aan ieder `FormControl` de 'initial state/value' mee
+> Om de aangemaakte `FormGroup` en `FormControls` te koppelen aan de template gebruiken we de `formGroup` en 'formControlName' directives
+- voeg een property binding `[formGroup]` toe aan het `form` element en bind aan de `movieForm` object 
+- Voeg een `formControlName` directive toe aan alle input velden en gebruik dezelfde naam die je in de `ngOnInit` functie hebt gebruikt, b.v. `formControlName="genre"`
+> De `FormGroup` die we koppelen aan ons root formulier element zal alle benodigde informatie verwerken van child formcontrols en groups
+- Voeg als laatste een event binding `(ngSubmit)` toe aan het form element en roep een `onSubmit()` functie aan
+- maak deze functie aan in de detail component
+  - gebruik de `movieForm` om uit te lezen of het formulier 'valide' is (`movieForm.valid`) voordat de data wordt 'opgeslagen'
+  - Geef ergens een melding als het formulier niet valide is
+> We hebben nog geen validatie toegevoegd, daarom is het formulier altijd valide
+
+
+oefening: custom form validator directive voor rating, te gebruiken in template driven en model driven forms:
 - create a class `CustomValidators` in the app folder 
   - Add a static function that validates a min value
   - Add a static function that validates a max value
@@ -243,17 +268,10 @@ nieuw oefening: custom form validator directive:
 
 
 
-oefening reactive (model driven) forms:
 
-
-> Next, we want to persist the model to the data store
-- gebruik een post
-
-
-nieuwe oefening opslaan van de shiznit?
-
-
-
+oefening: in service uitbreiding over observables:
+- switchmap
+- iets meer uitleg over rxjs voordat je met httpservice begint
 
 oefening component lifecycle hooks:
 - ngoninit, ngchange (ook dynamic forms), ngondestroy, er zijn nog veel meer
@@ -264,22 +282,10 @@ oefening pipes:
 - sorteren van de movie list op basis van rating
 
 
-oefening ..:
-- aparte oefening voor uitleg over observables ?
+oefening: unit testing:
+- 
 
-oefening component scoped service:
-- geneer een service die we alleen in de text-filter component gaan gebruiken 'ng g service shared/text-filter/text-filter'
-- importeer de service in het component.
-  - voeg de service toe aan de providers array van het component//ieder instantie van de component zal een eigen instantie van de service hebben (component scoped)
-  - injecteer de service in de component class
-
-
-oefening ...:
-- testing
-
-oefening :
-
-aot voor productie (extra?)
+oefening : aot voor productie (extra?)
 
 
 
