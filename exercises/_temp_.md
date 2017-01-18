@@ -2,11 +2,12 @@
 
 x === done
 
-
-
-- Vertel aan het begin wat je met de training wilt bereiken: 
- - Snel een angular app opzetten waarmee je movies kan bekijken, aanpassen, aanmaken en verwijderen
- - De app bouwen we op met herbruikbare componenten en met een structuur zoals voorgeschreven door de angular styleguide.
+````
+### zie explanation van opdr 0:
+x Vertel aan het begin wat je met de training wilt bereiken: 
+ x Snel een angular app opzetten waarmee je movies kan bekijken, aanpassen, aanmaken en verwijderen
+ x De app bouwen we op met herbruikbare componenten en met een structuur zoals voorgeschreven door de angular styleguide.
+````
 
 - niet alle opdrachten achter mekaar live coden, maar groeperen per onderwerp
 - in opdrachten steeds iets minder hints/hulp geven in de steps(?)
@@ -24,7 +25,7 @@ x oefening 11 routing module eigen file kun je ook de routermodule uit app/movie
 x voor core guard oefening een lazy loading oefening, verplaats deze oefeningen naar achteren (genoteerd in nieuwe opzet opdrachten)
 x model driven forms opdracht toevoegen, afhankelijk van studenten achtergrond
 
-TODO:
+
 - volgorde veranderen van opdrachten
   - opdrachten aanpassen aan volgorde
   - onderwerpen opdracht 0 explanation vergelijken met mail mark
