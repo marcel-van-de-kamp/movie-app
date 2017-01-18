@@ -5,14 +5,14 @@ Assignment 0: setting up an angular application with angular-cli
  
  **Mac/Linux users should prefix the commands with `sudo`.**
 
-- Install visual studio code
+- Install visual studio code.
 - Install nodejs and npm. (npm will be installed when installing nodejs). Make sure npm is added to the PATH enviroment variable.
-- Open up a terminal window and install typescript globally by executing the command `npm install typescript -g`  (macOS users: `sudo npm install typescript -g`)
-- Install angular-cli globally by executing the command `npm install angular-cli -g`
-- Open a (new) folder in visual studio code and open up the integrated terminal ( Ctrl + ` )
-- Setup a new Angular project with angular-cli bij executing the command `ng new movie-assignments`
-- Change directory ( `cd movie-assignments` ) to the newly created folder
-- After the project is setup, execute the command `npm install` from the internal terminal
+- Open up a terminal window and install typescript globally by executing the command `npm install typescript -g`  (macOS users: `sudo npm install typescript -g`).
+- Install angular-cli globally by executing the command `npm install angular-cli -g`.
+- Open a (new) folder in visual studio code and open up the integrated terminal ( Ctrl + ` ).
+- Setup a new Angular project with angular-cli bij executing the command `ng new movie-assignments`.
+- Change directory ( `cd movie-assignments` ) to the newly created folder.
+- After the project is setup, execute the command `npm install` from the internal terminal.
 - To run the application, execute the command `npm start` from the internal terminal and open the url http://localhost:4200 in a browser.
 
  **Links**:
