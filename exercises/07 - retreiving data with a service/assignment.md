@@ -4,10 +4,11 @@ Assignment 7: Retreiving data with a service
 > ## Create a service that returns/fetches the movie data instead of hardcoding it in the component
 
 **Links**:
-- [components & Services](https://angular-2-training-book.rangle.io/handout/migrate/ng-metadata/components-and-services.html)
-- [cervices tutorial](https://angular.io/docs/ts/latest/tutorial/toh-pt4.html)
+- [components & services](https://angular-2-training-book.rangle.io/handout/migrate/ng-metadata/components-and-services.html)
+- [services tutorial](https://angular.io/docs/ts/latest/tutorial/toh-pt4.html)
 - [dependency injection](https://angular-2-training-book.rangle.io/handout/di/what_is_di.html)
 - [angular dependency injection](https://angular-2-training-book.rangle.io/handout/di/angular2/)
+- [angular component lifecycle hooks](https://angular-2-training-book.rangle.io/handout/advanced-components/component_lifecycle.html)
 
 **Steps**:
 - Create a new service in the `movies` folder using the angular-cli command `ng g service movies/movie`.

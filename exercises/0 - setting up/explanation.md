@@ -9,7 +9,7 @@ Angular training
 - Each assignment has its own folder in the exercises folder
 - An assignment folder contains:
   - An `assignment.md` file where the assigment itself is described.
-  - An `steps.md` file that describes the assignment in detailed steps.
+  - A `steps.md` file that describes the assignment in detailed steps.
   - Sometimes an `explanation.md` file that gives further explanation if needed.
   - Sometimes other files to support the assignment.
 
@@ -22,8 +22,8 @@ After a subject, questions can be asked. If a student is done with a subject, he
 
 - Subject 1: creating stateful/stateless components and the component tree - > 1 t/m 5
 - Subject 2: creating a (feature) module and bundling funtionality -> 6
-- Subject 3: retreiving data with a service and observables -> 
-- Subject 4: processing user input with a form ->
+- Subject 3: retreiving data with a service and observables -> 7 & 8
+- Subject 4: processing user input with a form -> 9 t/m 11
 - Subject 5: routing and navigation between views -> 
 - Subject 6: component (style) encapsulation and shadow DOM ->
 - Subject 7: organizing application structure (core, shared module) ->
@@ -32,8 +32,3 @@ After a subject, questions can be asked. If a student is done with a subject, he
 **Todo's & Tips**:
 - Try and use the Angular API reference when doing the assignments: [angular 2 api reference](https://angular.io/docs/ts/latest/api/)
 - Try to do the assignment by reading the one or two liner and using the supplied resource links before going through the steps
-
-
-
-
-

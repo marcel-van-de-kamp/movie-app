@@ -1,4 +1,4 @@
-Assignment 13: Getting movies from a remote server
+Assignment 8: Getting movies from a remote server
 ==============================================
 
 > ## Use the angular http service to get movies from a remote/stub server

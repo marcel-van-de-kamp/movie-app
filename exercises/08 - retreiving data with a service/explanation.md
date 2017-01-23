@@ -7,7 +7,9 @@
 De data property in .json().data is hoe de angular web api de json vormgeeft! In een echte app kan dit dus anders zijn.
 
 
-result may look like this:
+Observables can be transformed to promises with an Rxjs operator `toPromise`:
+
+import 'rxjs/add/operator/toPromise';
 `getMovies(): Promise<Movie[]> {
     return this.http.get(this.moviesUrl)
                .toPromise()
