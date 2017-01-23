@@ -34,6 +34,8 @@ Assignment 11: Validating user input with a model driven form
 > Out of the box Angular 2 supplies the required, minlength, maxlength and pattern Validators.
 > To validate the min (1) and max (10) for the rating input we need to create a custom Validator. We will do this in another assignment.
 
+TODO: !!!! movie Wordt niet automatisch geupdate wanneer er een andere item in de list wordt geselecteerd, gebruik ngonchanges!!!
+
 **Extra**:
 - If the form is not valid, we don't want the user to be able to click the save button.
 - Use the json pipe to print the value and errors object on the screen. This can be handy when debugging.
