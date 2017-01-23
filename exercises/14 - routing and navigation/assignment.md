@@ -1,8 +1,8 @@
 Assignment 14: Navigation links and redirecting to another route
 ==============================================
 
-> ## Set the dashboard component as default route in app component 
-> ## and add navigation links for the movies and dashboard route
+> ### Set the dashboard component as default route in app component 
+> ### and add navigation links for the movies and dashboard route
 
 **Links**:
 - [redirecting to another Route](https://angular-2-training-book.rangle.io/handout/routing/redirects.html)
@@ -26,5 +26,5 @@ Assignment 14: Navigation links and redirecting to another route
 - Repeat the above step for `/dashboard`;
 
 **Result**:
-> When you now navigate to the empty route `localhost:4000`, the router will automatically redirect to the `dashboard` route.
+> When you now navigate to the empty route `localhost:4200`, the router will automatically redirect to the `dashboard` route.
 > Also, the movies and dashboard components are now accessible via navigation links.
