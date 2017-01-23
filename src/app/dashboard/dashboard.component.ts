@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Movie } from '../movies/movie';
-import { MovieService } from '../movies/movie.service';
+import { Movie, MovieService } from '../movies';
 
 @Component({
   templateUrl: './dashboard.component.html',

@@ -19,14 +19,14 @@ An assignment consist of a title, a description in one or two sentences, resourc
 The assignments are grouped into subjects. each subject will be live coded and explained before the students start doing the assignments.
 After a subject, questions can be asked. If a student is done with a subject, he may help other students where possible. subjects:
 
-- Subject 1: creating stateful/stateless components and the component tree - > 1 t/m 5
-- Subject 2: creating a (feature) module and bundling funtionality -> 6
-- Subject 3: retreiving data with a service and observables -> 7 & 8
-- Subject 4: processing user input with a form -> 9 t/m 11
-- Subject 5: routing and navigation between views -> 12 -> 14
-- Subject 6: styling and shadow DOM ->
-- Subject 7: organizing application structure (core, shared module) ->
-- Subject 8: unit testing ->
+- Subject 1: creating stateful/stateless components and the component tree
+- Subject 2: creating a (feature) module and bundling funtionality 
+- Subject 3: retreiving data with a service and observables
+- Subject 4: processing user input with a form
+- Subject 5: routing and navigation between views
+- Subject 6: styling and shadow DOM
+- Subject 7: organizing application structure (core, shared module) 
+- Subject 8: unit testing
 
 **Todo's & Tips**:
 - Try and use the Angular API reference when doing the assignments: [angular 2 api reference](https://angular.io/docs/ts/latest/api/)

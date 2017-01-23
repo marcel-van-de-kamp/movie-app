@@ -4,9 +4,9 @@
     <cw-movie-list [movies]="movies" (movieClicked)="onMovieClicked($event)"></cw-movie-list>
 </cw-loading-container>
 
-<!--<div *ngIf="selectedMovie">
+<div *ngIf="selectedMovie">
   <cw-movie-detail [movie]="selectedMovie"></cw-movie-detail>
-</div>-->
+</div>
 
 <div *ngIf="selectedMovie">
   <cw-movie-detail-reactive [movie]="selectedMovie"></cw-movie-detail-reactive>
