@@ -34,8 +34,7 @@ export class Movie {
   public genre: string;
   public rating: number;
 
-    constructor(id: number, name: string, genre: string, rating: number) {
-        // assigning CONSTRUCTOR FUNCTION PARAMETER values to CLASS PROPERTIES
+    constructor(id: number = 0, name: string = '', genre: string = '', rating: number = 1) {
         this.id = id;
         this.genre = genre;
         this.name = name;

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, SimpleChange, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 import { Movie } from '../movie';
@@ -8,7 +8,7 @@ import { Movie } from '../movie';
   templateUrl: './movie-detail-reactive.component.html',
   styleUrls: ['./movie-detail-reactive.component.scss']
 })
-export class MovieDetailReactiveComponent implements OnInit {
+export class MovieDetailReactiveComponent implements OnInit, OnChanges {
   @Input() movie: Movie;
 
   builder: FormBuilder;
@@ -35,6 +35,20 @@ export class MovieDetailReactiveComponent implements OnInit {
       genre: [this.movie.genre, [Validators.required]],
       rating: [this.movie.rating, [ Validators.nullValidator ]]
     });
+  }
+
+  ngOnChanges(changesObject: SimpleChanges): void {
+    if (changesObject['movie']) {
+      let values = changesObject['movie'];
+      if (!values.isFirstChange()) {
+        this.updateFormValues(this.movie);
+      }
+    }
+  }
+
+  private updateFormValues({ name, genre, rating }: { name: string, genre: string, rating: number }) {
+    (this.movieForm)
+      .setValue({ name, genre, rating }, { onlySelf: true });
   }
 
   onSubmit(): void {
