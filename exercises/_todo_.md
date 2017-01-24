@@ -52,6 +52,7 @@ TODO:
 - schema tekenen van opdrachten flow + generieke/extra opdrachten
 - extra opdrachten verder uitwerken
 - evaluatie formulier maken en na trainingen versturen
+- movie assignments / app en es/ts assignments op clockwork git zetten
 
 
 
