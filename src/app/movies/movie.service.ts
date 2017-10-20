@@ -15,14 +15,14 @@ export class MovieService {
   getMovies(): Promise<Movie[]> {
     return this.http.get(this.moviesUrl)
                .toPromise()
-               .then(response => response.json().data as Movie[])
+               .then(response => response.json() as Movie[])
                .catch(this.handleError);
   }
 
   getFavMovies(): Promise<Movie[]> {
     return this.http.get(this.moviesFavUrl)
                .toPromise()
-               .then(response => response.json().data as Movie[])
+               .then(response => response.json() as Movie[])
                .catch(this.handleError);
   }
 
