@@ -1,32 +1,37 @@
 <div>
-  <h2>{{movie.name}}</h2>
-  <div><span>genre:</span> {{movie.genre}}</div>
-  <div><span>rating:</span> {{movie.rating}}</div>
-
-  <form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm.value, movieForm.valid)" novalidate>
-    <div>
-      <span>name:</span>
-      <input type="text" name="name" #movieName="ngModel" [ngModel]="movie.name" required />
-      <span *ngIf="movieName.errors?.required">
-        Name is required!
-      </span>
-    </div>
+    <em>Template driven</em>
+    <h3>{{movie.name}}</h3>
 
     <div>
-      <span>genre:</span>
-      <input type="text" [ngModel]="movie.genre" name="genre" 
-        #genre="ngModel" (keydown.Escape)="genre.control.setValue('')" required />
-
-      <span *ngIf="genre.errors?.required">
-        Genre is required!
-      </span>
+        <strong>id: </strong>{{movie.id}}
     </div>
     <div>
-      <span>rating:</span>
-      <input type="number" name="rating" [ngModel]="movie.rating" />
+        <strong>rating: </strong>{{movie.rating}}
     </div>
-    <button type="submit">Save</button>
-    <!--{{genre.value | json}}-->
-    {{movieForm.value | json}}
-  </form>
+    <div>
+        <strong>genre: </strong>{{movie.genre}}
+    </div>
+    <form #movieForm="ngForm" (ngSubmit)="onSaveClicked(movieForm.value, movieForm.valid)" novalidate>
+        <div>
+            <span>name: </span>
+            <input type="text" name="name" [ngModel]="movie.name" minlength="4" #movieName="ngModel" required />
+            <span *ngIf="movieName.errors?.minlength && movieName.touched === true">Error: name must be at least 4 characters long!</span>
+            <span *ngIf="movieName.errors?.required && movieName.touched === true">Error: name is required!</span>
+        </div>
+        <div>
+            <span>genre: </span>
+            <input type="text" name="genre" [ngModel]="movie.genre" (keydown.Escape)="movie.genre = ''" />
+        </div>
+        <div>
+            <span>rating: </span>
+            <input name="rating" name="rating" type="number" [ngModel]="movie.rating" #movieRating="ngModel" cwRatingValidator ratingMin="1"
+                ratingMax="10" />
+            <span *ngIf="movieRating.errors?.validateRating && movieRating.touched === true">Error: value must be between 0 and 11!</span>
+        </div>
+        <div>
+            <button type="submit">Save..</button>
+            <button type="button" (click)="onResetClicked(movieForm)">Reset..</button>
+        </div>
+    </form>
+    {{ movieForm.value | json }}
 </div>

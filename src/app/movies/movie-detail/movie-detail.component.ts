@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Movie } from '../movie';
 
 @Component({
@@ -9,16 +9,24 @@ import { Movie } from '../movie';
 })
 export class MovieDetailComponent implements OnInit {
   @Input() movie: Movie;
+  @Output() save = new EventEmitter<Movie>();
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
 
-  onSubmit(value: Movie, isValid: boolean): void {
-    if(isValid) {
+  }
+
+  onSaveClicked(value, isValid) {
+    if (isValid) {
       Object.assign(this.movie, value);
+      this.save.emit(this.movie);
     } else {
-      alert('form not valid');
+      alert('not valid');
     }
+  }
+
+  onResetClicked(form: NgForm) {
+    form.resetForm(this.movie);
   }
 }

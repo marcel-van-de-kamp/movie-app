@@ -1,31 +1,35 @@
 <div>
-  <h2>{{movie.name}}</h2>
-  <div><span>genre:</span> {{movie.genre}}</div>
-  <div><span>rating:</span> {{movie.rating}}</div>
-
-  <form [formGroup]="movieForm" (ngSubmit)="onSubmit()" novalidate>
+    <em>Model driven</em>
+    <h3>{{movie.name}}</h3>
+  
     <div>
-      <span>name:</span>
-      <input type="text" formControlName="name" />
-      <span *ngIf="movieForm.controls.name.errors?.required">
-        field is required!
-      </span>
-      <span *ngIf="movieForm.controls.name.errors?.minlength">
-        field must be at least 4 characters!
-      </span>
+      <strong>id: </strong>{{movie.id}}
     </div>
     <div>
-      <span>genre:</span>
-      <input type="text" formControlName="genre" (keydown.Escape)="genre.control.setValue('')" />
-      <span *ngIf="movieForm.controls.genre.errors?.required">
-        field is required!
-      </span>
+      <strong>rating: </strong>{{movie.rating}}
     </div>
     <div>
-      <span>rating:</span>
-      <input type="number" formControlName="rating" />
+      <strong>genre: </strong>{{movie.genre}}
     </div>
-    <button type="submit" [disabled]="!movieForm.valid">Save</button>
-    {{movieForm.value | json}}
-  </form>
-</div>
+    <form [formGroup]="movieForm" (ngSubmit)="onSaveClicked()" novalidate>
+      <div>
+        <span>name: </span>
+        <input type="text" name="name" formControlName="name" />
+        <span *ngIf="movieForm.controls.name.errors?.minlength && movieForm.controls.name.touched === true">Error: name must be at least 3 characters long!</span>
+        <span *ngIf="movieForm.get('name').hasError('required') && movieForm.get('name').touched">Error: name is required!</span>
+      </div>
+      <div>
+        <span>genre: </span>
+        <input type="text" name="genre" formControlName="genre" />
+      </div>
+      <div>
+        <span>rating: </span>
+        <input name="rating" name="rating" type="number" formControlName="rating" />
+        <span *ngIf="movieForm.get('rating').hasError('validateRating') && movieForm.get('rating').touched">Error: between 1 and 10!</span>
+      </div>
+      <div>
+        <button type="submit">Save..</button>
+        <button type="button" (click)="onResetClicked(movieForm)">Reset..</button>
+      </div>
+    </form>
+  </div>

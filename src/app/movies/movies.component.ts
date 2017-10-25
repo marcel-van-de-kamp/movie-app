@@ -1,36 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Movie } from './movie';
 import { MovieService } from './movie.service';
+import { Movie } from './movie';
 
 @Component({
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss']
+    selector: 'cw-movies',
+    templateUrl: './movies.component.html',
+    styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-  public movies: Movie[];
-  public selectedMovie: Movie;
+    public movies: Movie[];
+    public selectedMovie: Movie;
 
-  public moviesLoading: boolean;
-  public movieLoading: boolean;
+    public moviesLoading: boolean;
+    public movieLoading: boolean;
 
-  constructor(private movieService: MovieService) {
+    private movieService: MovieService;
+    constructor(movieService: MovieService) {
+        this.movieService = movieService;
+    }
 
-  }
+    ngOnInit() {
+        this.getMovies();
+    }
 
-  ngOnInit() {
-    this.fetchMovies();
-  }
+    onMovieSelected(movie: Movie): void {
+        this.movieLoading = true;
+        this.selectedMovie = Object.assign({}, movie);
+        this.movieLoading = false;
+    }
 
-  onMovieClicked(event: Movie): void {
-    this.selectedMovie = Object.assign({}, event);
-  }
+    onSaveMovie(movie: Movie) {
+        this.movieService.updateMovie(movie).then(() => {
+            this.getMovies();
+        });
+    }
 
-  fetchMovies(): void {
-    this.moviesLoading = true;
-    this.movieService.getMovies().then(movies => {
-        this.movies = movies;
-        this.moviesLoading = false;
-    });
-  }
+    private getMovies() {
+        this.moviesLoading = true;
+        this.movieService.getMovies().then((result) => {
+            this.movies = result;
+            this.moviesLoading = false;
+        });
+    }
 }

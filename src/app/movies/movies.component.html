@@ -1,15 +1,15 @@
 <h2>All movies</h2>
 
 <cw-loading-container [loading]="moviesLoading" >
-    <cw-movie-list [movies]="movies" (movieClicked)="onMovieClicked($event)"></cw-movie-list>
+    <cw-movie-list [movies]="movies" (movieClicked)="onMovieSelected($event)"></cw-movie-list>
 </cw-loading-container>
 
-<!--<div *ngIf="selectedMovie">
-  <cw-movie-detail [movie]="selectedMovie"></cw-movie-detail>
-</div>-->
+<!-- template driven -->
+<!-- <cw-movie-detail *ngIf="selectedMovie" [movie]="selectedMovie" (save)="onSaveMovie($event)"></cw-movie-detail> -->
 
-<div *ngIf="selectedMovie">
-  <cw-movie-detail-reactive [movie]="selectedMovie"></cw-movie-detail-reactive>
-</div>
+<br />
+
+<!-- model driven -->
+<cw-movie-detail-reactive *ngIf="selectedMovie" [movie]="selectedMovie" (save)="onSaveMovie($event)"></cw-movie-detail-reactive>
 
 

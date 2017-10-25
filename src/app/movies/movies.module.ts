@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
-
 import { MoviesComponent } from './movies.component';
 
 import { MovieDetailReactiveComponent } from './movie-detail-reactive/movie-detail-reactive.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
+
+import { RatingValidatorDirective } from './rating-validator.directive';
 
 import { MovieService } from './movie.service';
 
@@ -20,7 +21,8 @@ import { MoviesRoutingModule } from './movies.routes.module';
     MoviesComponent,
     MovieDetailComponent,
     MovieDetailReactiveComponent,
-    MovieListComponent
+    MovieListComponent,
+    RatingValidatorDirective
   ],
   imports: [
     CommonModule,
