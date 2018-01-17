@@ -1,43 +1,45 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/toPromise';
 
 import { Movie } from './movie';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class MovieService {
     private moviesUrl = 'api/movies';  // URL to web api
     private moviesFavUrl = 'api/moviesFav';
 
-    constructor(private http: Http) { }
+    constructor(private http: HttpClient) { }
 
     getMovies(): Promise<Movie[]> {
-        // const observe = this.http.get(this.moviesUrl);
+        // const observe = this.http.get<Movie[]>(this.moviesUrl);
         // const promise = observe.toPromise();
 
         // const result = promise.then((response) => response.json() as Promise<Movie[]>);
 
         // return result;
 
-        return this.http.get(this.moviesUrl)
+        return this.http.get<Movie[]>(this.moviesUrl)
             .toPromise()
-            .then((response) => response.json() as Movie[])
+            .then((response) => response)
             .catch(this.handleError);
     }
 
     getFavMovies(): Promise<Movie[]> {
         return this.http.get(this.moviesFavUrl)
             .toPromise()
-            .then(response => response.json() as Movie[])
+            .then(response => response)
             .catch(this.handleError);
     }
 
     updateMovie(movie: Movie): Promise<Movie> {
         const url = `${this.moviesUrl}/${movie.id}`;
-        const json = JSON.stringify(movie);
+        const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+
         return this.http
-            .put(url, json)
+            .put<Movie>(url, movie, options)
             .toPromise()
             .then(() => movie)
             .catch(this.handleError);
