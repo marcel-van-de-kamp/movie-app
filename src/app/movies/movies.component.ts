@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from './movie.service';
 import { Movie } from './movie';
 
+import 'rxjs/add/operator/first';
+
 @Component({
     selector: 'cw-movies',
     templateUrl: './movies.component.html',
@@ -30,16 +32,18 @@ export class MoviesComponent implements OnInit {
     }
 
     onSaveMovie(movie: Movie) {
-        this.movieService.updateMovie(movie).then(() => {
+        this.movieService.updateMovie(movie).subscribe(() => {
             this.getMovies();
         });
     }
 
     private getMovies() {
         this.moviesLoading = true;
-        this.movieService.getMovies().then((result) => {
-            this.movies = result;
-            this.moviesLoading = false;
-        });
+
+        this.movieService.getMovies().subscribe(
+          (result) => { this.movies = result; this.moviesLoading = false; },
+          (e) => { alert('ophalen van movies ging nie goed..'); this.moviesLoading = false; },
+          () => {  } // <-- werkt niet, iets met finally?
+        );
     }
 }

@@ -1,53 +1,60 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Observable';
+import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import { catchError } from 'rxjs/operators';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/empty';
+import 'rxjs/add/observable/throw';
 
 import { Movie } from './movie';
 import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class MovieService {
-    private moviesUrl = 'api/movies';  // URL to web api
+    private moviesUrl = 'api/moves';  // URL to web api
     private moviesFavUrl = 'api/moviesFav';
 
     constructor(private http: HttpClient) { }
 
-    getMovies(): Promise<Movie[]> {
-        // const observe = this.http.get<Movie[]>(this.moviesUrl);
-        // const promise = observe.toPromise();
-
-        // const result = promise.then((response) => response.json() as Promise<Movie[]>);
-
-        // return result;
-
+    getMovies(): Observable<Movie[]> {
         return this.http.get<Movie[]>(this.moviesUrl)
-            .toPromise()
-            .then((response) => response)
-            .catch(this.handleError);
+                        .pipe(catchError(this.handleError));
     }
 
-    getFavMovies(): Promise<Movie[]> {
-        return this.http.get(this.moviesFavUrl)
-            .toPromise()
-            .then(response => response)
-            .catch(this.handleError);
+    getFavMovies(): Observable<Movie[]> {
+        return this.http.get<Movie[]>(this.moviesFavUrl)
+                        .catch(this.handleError);
     }
 
-    updateMovie(movie: Movie): Promise<Movie> {
+    updateMovie(movie: Movie): Observable<Movie> {
         const url = `${this.moviesUrl}/${movie.id}`;
         const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
         return this.http
             .put<Movie>(url, movie, options)
-            .toPromise()
-            .then(() => movie)
             .catch(this.handleError);
     }
 
-    private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
-    }
+    private handleError(httpError: HttpErrorResponse): Observable<any> {
+        let error = httpError.error;
 
+        if (httpError.error instanceof Error) {
+            error = httpError.error.message;
+            // A client-side or network error occurred. Handle it accordingly.
+            console.error('An error occurred:', httpError.error.message);
+          } else {
+            error = httpError.error || httpError['body'].error;
+            // The backend returned an unsuccessful response code.
+            // The response body may contain clues as to what went wrong,
+            console.error(`Back-end returned code ${httpError.status}, body was: ${httpError.error || httpError['body'].error}`);
+          }
+
+          // ...optionally return a default fallback value so app can continue
+          return Observable.throw(error);
+
+          // OR 'rethrow' the error so components can do their own error handling
+          // return Observable.throw(error);
+    }
 }

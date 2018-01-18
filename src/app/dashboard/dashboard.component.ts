@@ -18,10 +18,9 @@ export class DashboardComponent implements OnInit {
 
   fetchFavMovies(): void {
     this.favsLoading = true;
-    this.movieService.getFavMovies().then(
-        movies => {
-            this.favMovies = movies;
-            this.favsLoading = false;
-            });
+    this.movieService.getFavMovies().subscribe((movies) => {
+      this.favMovies = movies;
+      this.favsLoading = false;
+    });
   }
 }
