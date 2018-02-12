@@ -13,7 +13,7 @@ import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class MovieService {
-    private moviesUrl = 'api/moves';  // URL to web api
+    private moviesUrl = 'api/movies';  // URL to web api
     private moviesFavUrl = 'api/moviesFav';
 
     constructor(private http: HttpClient) { }
