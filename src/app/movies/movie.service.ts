@@ -1,12 +1,12 @@
+
+import {throwError as observableThrowError,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-
-import { Observable } from 'rxjs/Observable';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError } from 'rxjs/operators';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/empty';
-import 'rxjs/add/observable/throw';
+
+
+
 
 import { Movie } from './movie';
 import { HttpHeaders } from '@angular/common/http';
@@ -24,8 +24,8 @@ export class MovieService {
     }
 
     getFavMovies(): Observable<Movie[]> {
-        return this.http.get<Movie[]>(this.moviesFavUrl)
-                        .catch(this.handleError);
+        return this.http.get<Movie[]>(this.moviesFavUrl).pipe(
+                        catchError(this.handleError));
     }
 
     updateMovie(movie: Movie): Observable<Movie> {
@@ -33,8 +33,8 @@ export class MovieService {
         const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
         return this.http
-            .put<Movie>(url, movie, options)
-            .catch(this.handleError);
+            .put<Movie>(url, movie, options).pipe(
+            catchError(this.handleError));
     }
 
     private handleError(httpError: HttpErrorResponse): Observable<any> {
@@ -52,7 +52,7 @@ export class MovieService {
           }
 
           // ...optionally return a default fallback value so app can continue
-          return Observable.throw(error);
+          return observableThrowError(error);
 
           // OR 'rethrow' the error so components can do their own error handling
           // return Observable.throw(error);

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { LoadingBarService } from './loading-bar.service';
 
-import 'rxjs/add/operator/map';
+
 
 @Component({
     selector: 'cw-loading-bar',

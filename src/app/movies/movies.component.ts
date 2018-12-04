@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from './movie.service';
 import { Movie } from './movie';
 
-import 'rxjs/add/operator/first';
+
 
 @Component({
     selector: 'cw-movies',

@@ -1,16 +1,17 @@
+
+import {publish} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import { ConnectableObservable } from 'rxjs/observable/ConnectableObservable';
+import { Observable ,  ConnectableObservable } from 'rxjs';
 import { Observer } from 'rxjs/observer';
-import 'rxjs/add/operator/publish';
+
 
 @Injectable()
 export class LoadingBarService {
 
     private currentPercentage: number;
     // hot observable: //http://blog.thoughtram.io/angular/2016/06/16/cold-vs-hot-observables.html
-    private observable: ConnectableObservable<number>;
+    private observable: any;
     private intervalId: any;
 
     constructor() {
@@ -30,7 +31,7 @@ export class LoadingBarService {
                     observer.complete();
                 }
             }, 100);
-        }).publish();
+        }).pipe(publish());
 
         this.observable.connect();
 
